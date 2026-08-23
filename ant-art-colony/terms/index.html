@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Terms of use for Ant Art Colony, including in-app purchases and the Ant Queen Pass auto-renewing subscription — length, price, and how to cancel.">
+<title>Ant Art Colony Terms of Use</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Literata:ital,opsz,wght@0,18..144,400;0,18..144,500;0,18..144,600;1,18..144,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #FBF3E3;
+    --bg-raised: #FFFCF4;
+    --ink: #3A2415;
+    --ink-soft: #8C7057;
+    --ink-faint: #B29A80;
+    --accent: #D9971E;
+    --accent-ink: #6B4A0E;
+    --leaf: #3F8760;
+    --line: rgba(58, 36, 21, 0.14);
+    --line-strong: rgba(58, 36, 21, 0.28);
+    --shadow: rgba(58, 36, 21, 0.10);
+    --font-display: "Baloo 2", ui-rounded, "SF Pro Rounded", system-ui, sans-serif;
+    --font-body: "Literata", Georgia, "Times New Roman", serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1C130A;
+      --bg-raised: #241A0F;
+      --ink: #F3E4C9;
+      --ink-soft: #C1A47E;
+      --ink-faint: #7C674F;
+      --accent: #F2B04A;
+      --accent-ink: #3A2712;
+      --leaf: #6FBE8F;
+      --line: rgba(243, 228, 201, 0.14);
+      --line-strong: rgba(243, 228, 201, 0.26);
+      --shadow: rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #1C130A;
+    --bg-raised: #241A0F;
+    --ink: #F3E4C9;
+    --ink-soft: #C1A47E;
+    --ink-faint: #7C674F;
+    --accent: #F2B04A;
+    --accent-ink: #3A2712;
+    --leaf: #6FBE8F;
+    --line: rgba(243, 228, 201, 0.14);
+    --line-strong: rgba(243, 228, 201, 0.26);
+    --shadow: rgba(0, 0, 0, 0.35);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: rise 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 6rem;
+  }
+
+  /* ---- Masthead ---- */
+
+  .masthead {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.75rem;
+  }
+
+  .masthead img {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px var(--shadow), inset 0 0 0 1px var(--line-strong);
+    flex-shrink: 0;
+  }
+
+  .masthead-text h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin: 0 0 0.15rem;
+    letter-spacing: -0.01em;
+  }
+
+  .masthead-text p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
+    align-items: center;
+    margin-bottom: 3.25rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    background: color-mix(in srgb, var(--accent) 22%, var(--bg-raised));
+    border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+    padding: 0.32rem 0.7rem;
+    border-radius: 100px;
+  }
+
+  .badge .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .meta-plain {
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+  }
+
+  /* ---- Intro ---- */
+
+  .intro {
+    font-size: 1.12rem;
+    color: var(--ink);
+    max-width: 62ch;
+    margin-bottom: 3rem;
+  }
+
+  .intro strong { color: var(--ink); font-weight: 600; }
+
+  /* ---- Trail-rail sections ---- */
+
+  .trail {
+    position: relative;
+    padding-left: 2.1rem;
+  }
+
+  .trail::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 0.55rem;
+    bottom: 2.4rem;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--line-strong), var(--line) 92%, transparent);
+  }
+
+  section.entry {
+    position: relative;
+    padding-bottom: 2.6rem;
+  }
+
+  section.entry::before {
+    content: "";
+    position: absolute;
+    left: -2.1rem;
+    top: 0.5rem;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+  }
+
+  section.entry h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.28rem;
+    margin: 0 0 0.85rem;
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+  }
+
+  section.entry h3 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--ink-soft);
+    margin: 1.4rem 0 0.5rem;
+  }
+
+  section.entry p {
+    margin: 0 0 0.9rem;
+    max-width: 64ch;
+  }
+
+  section.entry p:last-child { margin-bottom: 0; }
+
+  section.entry ul {
+    margin: 0 0 0.9rem;
+    padding-left: 1.2rem;
+  }
+
+  section.entry li {
+    margin-bottom: 0.5rem;
+    max-width: 60ch;
+  }
+
+  section.entry li::marker {
+    color: var(--accent);
+  }
+
+  a {
+    color: var(--leaf);
+    text-decoration-color: color-mix(in srgb, var(--leaf) 45%, transparent);
+    text-underline-offset: 0.18em;
+  }
+
+  a:hover { text-decoration-thickness: 2px; }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  .callout {
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--leaf);
+    border-radius: 10px;
+    padding: 0.9rem 1.1rem;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin: 0.9rem 0;
+  }
+
+  .callout strong { color: var(--ink); }
+
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.87em;
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    padding: 0.1em 0.4em;
+    border-radius: 5px;
+    color: var(--accent-ink);
+  }
+
+  /* ---- Footer ---- */
+
+  footer {
+    margin-top: 1.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    font-size: 0.88rem;
+    color: var(--ink-faint);
+  }
+
+  footer a { color: var(--ink-soft); font-weight: 600; }
+
+  .back-to-top {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  @media (max-width: 480px) {
+    .page { padding: 3rem 1.25rem 4rem; }
+    .masthead img { width: 48px; height: 48px; }
+    .masthead-text h1 { font-size: 1.3rem; }
+    .trail { padding-left: 1.6rem; }
+    section.entry::before { left: -1.6rem; }
+  }
+</style>
+
+
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead reveal">
+    <img src="data:image/png;base64,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" alt="Ant Art Colony app icon" />
+    <div class="masthead-text">
+      <h1>Ant Art Colony</h1>
+      <p>Terms of Use</p>
+    </div>
+  </div>
+
+  <div class="meta-row reveal" style="animation-delay: 0.05s">
+    <span class="badge"><span class="dot"></span>Effective August 23, 2026</span>
+    <span class="meta-plain">Published by Codifya</span>
+    <span class="meta-plain">·</span>
+    <span class="meta-plain"><a href="mailto:info@codifya.com" style="color:var(--ink-faint); text-decoration-color: var(--line-strong);">info@codifya.com</a></span>
+  </div>
+
+  <p class="intro reveal" style="animation-delay: 0.1s">
+    These terms cover your use of Ant Art Colony, an idle pixel-art game
+    published by Codifya. By downloading or playing the app, you agree to
+    them. <strong>Read the subscription section carefully if you're
+    considering the Ant Queen Pass</strong> — it explains exactly how billing
+    and renewal work.
+  </p>
+
+  <div class="trail">
+
+    <section class="entry reveal" id="the-app" style="animation-delay: 0.15s">
+      <h2>The app</h2>
+      <p>
+        Ant Art Colony is licensed to you for personal, non-commercial use on
+        devices you own or control, subject to Apple's
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Licensed Application End User License Agreement</a>,
+        which applies unless these terms say otherwise. We may update the app
+        — new levels, features, or fixes — at any time.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="virtual-items" style="animation-delay: 0.2s">
+      <h2>Coins, gems &amp; other virtual items</h2>
+      <p>
+        Coins, gems, and any other in-game currency or item have no
+        real-world monetary value. They can't be exchanged for cash, transferred
+        to another player or account, or redeemed outside the app. We may
+        adjust in-game economy balancing (earn rates, costs) in future
+        updates without notice.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="purchases" style="animation-delay: 0.25s">
+      <h2>In-app purchases</h2>
+      <p>
+        Remove Ads, Unlimited 4x Speed, and diamond packs are one-time
+        purchases billed through your Apple ID by the App Store. All sales
+        are handled and, where applicable, refunded by Apple under its own
+        policies — Codifya does not process payments or issue refunds
+        directly. To request a refund, visit
+        <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="subscription" style="animation-delay: 0.3s">
+      <h2>Ant Queen Pass subscription</h2>
+      <p>
+        The Ant Queen Pass is an auto-renewing subscription. Here's exactly
+        how it works:
+      </p>
+      <ul>
+        <li><strong>Length:</strong> billed monthly, for as long as it stays active.</li>
+        <li><strong>Price:</strong> $3.99 per month, charged to your Apple ID account at confirmation of purchase.</li>
+        <li><strong>Auto-renewal:</strong> your subscription renews automatically unless you turn off auto-renew at least 24 hours before the current period ends.</li>
+        <li><strong>Renewal charge:</strong> your account is charged for renewal within 24 hours before the end of the current period, at the same price unless we've notified you of a change in advance.</li>
+        <li><strong>Managing or cancelling:</strong> go to <code>Settings → [your name] → Subscriptions</code> on your device, or manage it directly in the App Store. Turning off auto-renew doesn't cancel the time you've already paid for — you keep Queen Pass benefits until the current period ends.</li>
+      </ul>
+      <div class="callout">
+        Apple, not Codifya, holds your payment method and processes every
+        charge — we never see or store your card details.
+      </div>
+    </section>
+
+    <section class="entry reveal" id="acceptable-use" style="animation-delay: 0.35s">
+      <h2>Acceptable use</h2>
+      <p>
+        Play fair: don't use cheats, exploits, bots, or modified clients to
+        manipulate progress, currency, or purchases, and don't attempt to
+        reverse-engineer, decompile, or extract assets from the app beyond
+        what's permitted by applicable law. We may suspend access for accounts
+        or devices that abuse the game in these ways.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="ownership" style="animation-delay: 0.4s">
+      <h2>Ownership</h2>
+      <p>
+        Ant Art Colony — its code, art, levels, and design — belongs to
+        Codifya. Nothing here transfers ownership of the app to you; you're
+        granted a license to play it, not a copy to redistribute or repurpose.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="warranty" style="animation-delay: 0.45s">
+      <h2>No warranty, limited liability</h2>
+      <p>
+        Ant Art Colony is provided "as is." We work to keep it fun and free of
+        bugs, but we don't guarantee it will always be error-free, available
+        without interruption, or perfectly compatible with every device. To
+        the extent permitted by law, Codifya isn't liable for indirect or
+        incidental damages arising from your use of the app.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="termination" style="animation-delay: 0.5s">
+      <h2>Termination</h2>
+      <p>
+        You can stop using the app at any time by deleting it. We may suspend
+        or end access for accounts that violate these terms. Ending your use
+        of the app doesn't cancel an active App Store subscription — that's
+        managed separately through your Apple ID, as described above.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="changes" style="animation-delay: 0.55s">
+      <h2>Changes to these terms</h2>
+      <p>
+        If we materially change these terms, we'll update this page and move
+        the effective date at the top. Continuing to use the app after a
+        change means you accept the updated terms.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="governing-law" style="animation-delay: 0.6s">
+      <h2>Governing law</h2>
+      <p>
+        These terms are governed by the laws of the Republic of Türkiye,
+        without regard to conflict-of-law principles, except where local
+        consumer-protection law in your country grants you additional rights
+        that can't be waived.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="contact" style="animation-delay: 0.65s">
+      <h2>Contact</h2>
+      <p>
+        Questions about these terms? Reach us at
+        <a href="mailto:info@codifya.com">info@codifya.com</a>. See also our
+        <a href="/ant-art-colony/privacy/">Privacy Policy</a>.
+      </p>
+    </section>
+
+  </div>
+
+  <footer class="reveal" style="animation-delay: 0.7s">
+    <span>© 2026 Codifya. Ant Art Colony.</span>
+    <a class="back-to-top" href="#top">Back to top ↑</a>
+  </footer>
+
+</div>
+
+</body>
+</html>
