@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Support and frequently asked questions for Intake, the water, beverage, and food tracker by Codifya.">
+<title>Intake Support</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Literata:ital,opsz,wght@0,18..144,400;0,18..144,500;0,18..144,600;1,18..144,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #EFF6FC;
+    --bg-raised: #FFFFFF;
+    --ink: #12293D;
+    --ink-soft: #4C7089;
+    --ink-faint: #8CA9BB;
+    --accent: #2E9BF0;
+    --accent-ink: #0B4B78;
+    --leaf: #0E8F9E;
+    --line: rgba(18, 41, 61, 0.12);
+    --line-strong: rgba(18, 41, 61, 0.24);
+    --shadow: rgba(18, 41, 61, 0.10);
+    --font-display: "Manrope", ui-rounded, "SF Pro Rounded", system-ui, sans-serif;
+    --font-body: "Literata", Georgia, "Times New Roman", serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #081420;
+      --bg-raised: #0E1D2C;
+      --ink: #E7F1F8;
+      --ink-soft: #A9C6D8;
+      --ink-faint: #6D8A9C;
+      --accent: #5FB6FF;
+      --accent-ink: #EAF6FF;
+      --leaf: #52D4CF;
+      --line: rgba(231, 241, 248, 0.14);
+      --line-strong: rgba(231, 241, 248, 0.26);
+      --shadow: rgba(0, 0, 0, 0.40);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #081420;
+    --bg-raised: #0E1D2C;
+    --ink: #E7F1F8;
+    --ink-soft: #A9C6D8;
+    --ink-faint: #6D8A9C;
+    --accent: #5FB6FF;
+    --accent-ink: #EAF6FF;
+    --leaf: #52D4CF;
+    --line: rgba(231, 241, 248, 0.14);
+    --line-strong: rgba(231, 241, 248, 0.26);
+    --shadow: rgba(0, 0, 0, 0.40);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: rise 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 6rem;
+  }
+
+  /* ---- Masthead ---- */
+
+  .masthead {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.75rem;
+  }
+
+  .masthead img {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px var(--shadow), inset 0 0 0 1px var(--line-strong);
+    flex-shrink: 0;
+  }
+
+  .masthead-text h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin: 0 0 0.15rem;
+    letter-spacing: -0.01em;
+  }
+
+  .masthead-text p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
+    align-items: center;
+    margin-bottom: 3.25rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    background: color-mix(in srgb, var(--accent) 18%, var(--bg-raised));
+    border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+    padding: 0.32rem 0.7rem;
+    border-radius: 100px;
+  }
+
+  .badge .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .meta-plain {
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+  }
+
+  /* ---- Intro ---- */
+
+  .intro {
+    font-size: 1.12rem;
+    color: var(--ink);
+    max-width: 62ch;
+    margin-bottom: 3rem;
+  }
+
+  .intro strong { color: var(--ink); font-weight: 600; }
+
+  /* ---- Trail-rail sections ---- */
+
+  .trail {
+    position: relative;
+    padding-left: 2.1rem;
+  }
+
+  .trail::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 0.55rem;
+    bottom: 2.4rem;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--line-strong), var(--line) 92%, transparent);
+  }
+
+  section.entry {
+    position: relative;
+    padding-bottom: 2.6rem;
+  }
+
+  section.entry::before {
+    content: "";
+    position: absolute;
+    left: -2.1rem;
+    top: 0.5rem;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+  }
+
+  section.entry h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.28rem;
+    margin: 0 0 0.85rem;
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+  }
+
+  section.entry h3 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--ink-soft);
+    margin: 1.4rem 0 0.5rem;
+  }
+
+  section.entry p {
+    margin: 0 0 0.9rem;
+    max-width: 64ch;
+  }
+
+  section.entry p:last-child { margin-bottom: 0; }
+
+  section.entry ul {
+    margin: 0 0 0.9rem;
+    padding-left: 1.2rem;
+  }
+
+  section.entry li {
+    margin-bottom: 0.5rem;
+    max-width: 60ch;
+  }
+
+  section.entry li::marker {
+    color: var(--accent);
+  }
+
+  a {
+    color: var(--leaf);
+    text-decoration-color: color-mix(in srgb, var(--leaf) 45%, transparent);
+    text-underline-offset: 0.18em;
+  }
+
+  a:hover { text-decoration-thickness: 2px; }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  .callout {
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--leaf);
+    border-radius: 10px;
+    padding: 0.9rem 1.1rem;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin: 0.9rem 0;
+  }
+
+  .callout strong { color: var(--ink); }
+
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.87em;
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    padding: 0.1em 0.4em;
+    border-radius: 5px;
+    color: var(--accent-ink);
+  }
+
+  /* ---- Footer ---- */
+
+  footer {
+    margin-top: 1.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    font-size: 0.88rem;
+    color: var(--ink-faint);
+  }
+
+  footer a { color: var(--ink-soft); font-weight: 600; }
+
+  .back-to-top {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  @media (max-width: 480px) {
+    .page { padding: 3rem 1.25rem 4rem; }
+    .masthead img { width: 48px; height: 48px; }
+    .masthead-text h1 { font-size: 1.3rem; }
+    .trail { padding-left: 1.6rem; }
+    section.entry::before { left: -1.6rem; }
+  }
+</style>
+
+</head>
+<body>
+<div class="page" id="top">
+
+  <div class="masthead reveal">
+    <img src="/intake/icon.png" alt="Intake app icon" />
+    <div class="masthead-text">
+      <h1>Intake</h1>
+      <p>Support &amp; FAQ</p>
+    </div>
+  </div>
+
+  <div class="meta-row reveal" style="animation-delay: 0.05s">
+    <span class="badge"><span class="dot"></span>Support</span>
+    <span class="meta-plain">Published by Codifya</span>
+    <span class="meta-plain">·</span>
+    <span class="meta-plain"><a href="mailto:info@codifya.com" style="color:var(--ink-faint); text-decoration-color: var(--line-strong);">info@codifya.com</a></span>
+  </div>
+
+  <p class="intro reveal" style="animation-delay: 0.1s">
+    Need help with Intake? Most questions are answered below. If you can't
+    find what you're looking for, email us directly and we'll get back to
+    you as soon as we can.
+  </p>
+
+  <div class="trail">
+
+    <section class="entry reveal" id="getting-started" style="animation-delay: 0.15s">
+      <h2>Getting started</h2>
+      <p>
+        Intake works fully offline and doesn't require an account. From the
+        <strong>Today</strong> screen you can tap a quick-add preset (200ml,
+        250ml, 330ml, 500ml) to log water in one tap, or tap
+        <strong>+ Quick Add</strong> to log a beverage or meal. Use the
+        barcode icon to scan packaged food and pull in verified nutrition
+        data automatically.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="apple-health" style="animation-delay: 0.2s">
+      <h2>Apple Health isn't syncing</h2>
+      <p>
+        Health sync is optional and off by default. Turn it on from
+        <strong>Settings → Connect Apple Health</strong>, and confirm the
+        permission prompt from iOS. Intake only writes to Health — it never
+        reads existing Health data. If entries still aren't appearing,
+        check <code>Settings → Privacy &amp; Security → Health → Intake</code>
+        on your device to confirm write access is enabled for water,
+        caffeine, and nutrition categories.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="barcode" style="animation-delay: 0.25s">
+      <h2>Barcode scanning issues</h2>
+      <p>
+        If a scan doesn't return a result, the product may not yet be in the
+        Open Food Facts database — you can still add it manually. Make sure
+        Intake has camera access under
+        <code>Settings → Privacy &amp; Security → Camera</code>, and that
+        you're scanning in good lighting with the barcode filling the frame.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="widgets-watch" style="animation-delay: 0.3s">
+      <h2>Widgets &amp; Apple Watch not updating</h2>
+      <p>
+        Widgets and the Watch app share data locally through your device.
+        If a widget looks stale, try removing and re-adding it from the
+        Home Screen, or opening the Watch app once to force a refresh.
+        Restarting your device also clears most sync hiccups.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="data" style="animation-delay: 0.35s">
+      <h2>My data &amp; switching devices</h2>
+      <p>
+        Intake stores your logs on-device and does not currently back them
+        up to iCloud. If you enabled Apple Health sync, your hydration and
+        nutrition history will still be visible in the Health app on a new
+        device once you sign in with the same Apple ID. We're evaluating
+        iCloud backup for a future update.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="notifications" style="animation-delay: 0.4s">
+      <h2>Reminders aren't showing up</h2>
+      <p>
+        Check that notifications are enabled for Intake under
+        <code>Settings → Notifications → Intake</code> on your device, and
+        that reminders are turned on in-app under
+        <strong>Settings → Enable Reminders</strong>. Intake automatically
+        skips reminders once you're close to your daily goal.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="contact" style="animation-delay: 0.45s">
+      <h2>Still need help?</h2>
+      <p>
+        Email us at <a href="mailto:info@codifya.com">info@codifya.com</a>
+        with your device model and iOS version, and a short description of
+        what you're seeing. See also our
+        <a href="/intake/privacy/">Privacy Policy</a> and
+        <a href="/intake/terms/">Terms of Use</a>.
+      </p>
+    </section>
+
+  </div>
+
+  <footer class="reveal" style="animation-delay: 0.5s">
+    <span>© 2026 Codifya. Intake.</span>
+    <a class="back-to-top" href="#top">Back to top ↑</a>
+  </footer>
+
+</div>
+
+</body>
+</html>
