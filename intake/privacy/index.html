@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<meta name="description" content="How Intake (by Codifya) handles your data: on-device storage, optional Apple Health sync, camera-based barcode scanning, and no third-party tracking.">
+<title>Intake Privacy Policy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Literata:ital,opsz,wght@0,18..144,400;0,18..144,500;0,18..144,600;1,18..144,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #EFF6FC;
+    --bg-raised: #FFFFFF;
+    --ink: #12293D;
+    --ink-soft: #4C7089;
+    --ink-faint: #8CA9BB;
+    --accent: #2E9BF0;
+    --accent-ink: #0B4B78;
+    --leaf: #0E8F9E;
+    --line: rgba(18, 41, 61, 0.12);
+    --line-strong: rgba(18, 41, 61, 0.24);
+    --shadow: rgba(18, 41, 61, 0.10);
+    --font-display: "Manrope", ui-rounded, "SF Pro Rounded", system-ui, sans-serif;
+    --font-body: "Literata", Georgia, "Times New Roman", serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #081420;
+      --bg-raised: #0E1D2C;
+      --ink: #E7F1F8;
+      --ink-soft: #A9C6D8;
+      --ink-faint: #6D8A9C;
+      --accent: #5FB6FF;
+      --accent-ink: #EAF6FF;
+      --leaf: #52D4CF;
+      --line: rgba(231, 241, 248, 0.14);
+      --line-strong: rgba(231, 241, 248, 0.26);
+      --shadow: rgba(0, 0, 0, 0.40);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #081420;
+    --bg-raised: #0E1D2C;
+    --ink: #E7F1F8;
+    --ink-soft: #A9C6D8;
+    --ink-faint: #6D8A9C;
+    --accent: #5FB6FF;
+    --accent-ink: #EAF6FF;
+    --leaf: #52D4CF;
+    --line: rgba(231, 241, 248, 0.14);
+    --line-strong: rgba(231, 241, 248, 0.26);
+    --shadow: rgba(0, 0, 0, 0.40);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: rise 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 6rem;
+  }
+
+  /* ---- Masthead ---- */
+
+  .masthead {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.75rem;
+  }
+
+  .masthead img {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px var(--shadow), inset 0 0 0 1px var(--line-strong);
+    flex-shrink: 0;
+  }
+
+  .masthead-text h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin: 0 0 0.15rem;
+    letter-spacing: -0.01em;
+  }
+
+  .masthead-text p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
+    align-items: center;
+    margin-bottom: 3.25rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    background: color-mix(in srgb, var(--accent) 18%, var(--bg-raised));
+    border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+    padding: 0.32rem 0.7rem;
+    border-radius: 100px;
+  }
+
+  .badge .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .meta-plain {
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+  }
+
+  /* ---- Intro ---- */
+
+  .intro {
+    font-size: 1.12rem;
+    color: var(--ink);
+    max-width: 62ch;
+    margin-bottom: 3rem;
+  }
+
+  .intro strong { color: var(--ink); font-weight: 600; }
+
+  /* ---- Trail-rail sections ---- */
+
+  .trail {
+    position: relative;
+    padding-left: 2.1rem;
+  }
+
+  .trail::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 0.55rem;
+    bottom: 2.4rem;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--line-strong), var(--line) 92%, transparent);
+  }
+
+  section.entry {
+    position: relative;
+    padding-bottom: 2.6rem;
+  }
+
+  section.entry::before {
+    content: "";
+    position: absolute;
+    left: -2.1rem;
+    top: 0.5rem;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+  }
+
+  section.entry h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.28rem;
+    margin: 0 0 0.85rem;
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+  }
+
+  section.entry h3 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--ink-soft);
+    margin: 1.4rem 0 0.5rem;
+  }
+
+  section.entry p {
+    margin: 0 0 0.9rem;
+    max-width: 64ch;
+  }
+
+  section.entry p:last-child { margin-bottom: 0; }
+
+  section.entry ul {
+    margin: 0 0 0.9rem;
+    padding-left: 1.2rem;
+  }
+
+  section.entry li {
+    margin-bottom: 0.5rem;
+    max-width: 60ch;
+  }
+
+  section.entry li::marker {
+    color: var(--accent);
+  }
+
+  a {
+    color: var(--leaf);
+    text-decoration-color: color-mix(in srgb, var(--leaf) 45%, transparent);
+    text-underline-offset: 0.18em;
+  }
+
+  a:hover { text-decoration-thickness: 2px; }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  .callout {
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--leaf);
+    border-radius: 10px;
+    padding: 0.9rem 1.1rem;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin: 0.9rem 0;
+  }
+
+  .callout strong { color: var(--ink); }
+
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.87em;
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    padding: 0.1em 0.4em;
+    border-radius: 5px;
+    color: var(--accent-ink);
+  }
+
+  /* ---- Footer ---- */
+
+  footer {
+    margin-top: 1.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    font-size: 0.88rem;
+    color: var(--ink-faint);
+  }
+
+  footer a { color: var(--ink-soft); font-weight: 600; }
+
+  .back-to-top {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  @media (max-width: 480px) {
+    .page { padding: 3rem 1.25rem 4rem; }
+    .masthead img { width: 48px; height: 48px; }
+    .masthead-text h1 { font-size: 1.3rem; }
+    .trail { padding-left: 1.6rem; }
+    section.entry::before { left: -1.6rem; }
+  }
+</style>
+
+</head>
+<body>
+<div class="page" id="top">
+
+  <div class="masthead reveal">
+    <img src="/intake/icon.png" alt="Intake app icon" />
+    <div class="masthead-text">
+      <h1>Intake</h1>
+      <p>Privacy Policy</p>
+    </div>
+  </div>
+
+  <div class="meta-row reveal" style="animation-delay: 0.05s">
+    <span class="badge"><span class="dot"></span>Effective September 10, 2026</span>
+    <span class="meta-plain">Published by Codifya</span>
+    <span class="meta-plain">·</span>
+    <span class="meta-plain"><a href="mailto:info@codifya.com" style="color:var(--ink-faint); text-decoration-color: var(--line-strong);">info@codifya.com</a></span>
+  </div>
+
+  <p class="intro reveal" style="animation-delay: 0.1s">
+    Intake is an offline-first water, beverage, and food tracker built with
+    SwiftUI and SwiftData. This page explains, in plain language, what the
+    app does and doesn't do with your information — <strong>short version:
+    your logs live on your device, there's no account, and nothing you track
+    is ever sent to a Codifya server.</strong>
+  </p>
+
+  <div class="trail">
+
+    <section class="entry reveal" id="what-we-collect" style="animation-delay: 0.15s">
+      <h2>What the app stores</h2>
+      <p>
+        Every water, beverage, and meal entry — along with your goals,
+        presets, and settings — is saved directly on your device using
+        Apple's SwiftData framework. There is no Codifya server for this
+        data to travel to, and creating an account is never required to use
+        the app.
+      </p>
+      <div class="callout">
+        We do not collect your name, email address, contacts, or location.
+        There is no sign-up form anywhere in the app.
+      </div>
+    </section>
+
+    <section class="entry reveal" id="healthkit" style="animation-delay: 0.2s">
+      <h2>Apple Health (HealthKit)</h2>
+      <p>
+        If you turn it on in Settings, Intake can <strong>write</strong> your
+        water, beverage, and meal-nutrition logs to Apple Health so they show
+        up alongside your other health data. Intake only ever writes to
+        Apple Health — it never reads your existing Health data back, and
+        the sync is entirely optional.
+      </p>
+      <p>
+        You can revoke this permission at any time from
+        <code>Settings → Privacy &amp; Security → Health → Intake</code> on
+        your device. Doing so stops future syncing; it does not delete
+        samples Intake already wrote — those are managed from within the
+        Health app itself.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="camera" style="animation-delay: 0.25s">
+      <h2>Camera &amp; barcode scanning</h2>
+      <p>
+        Intake's barcode scanner uses your camera (via Apple's VisionKit and
+        AVFoundation) to read product barcodes for faster food logging.
+        Camera frames are processed entirely on-device and are never saved
+        to disk, added to your photo library, or transmitted anywhere. If
+        you decline camera access, you can still log everything through
+        manual entry.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="open-food-facts" style="animation-delay: 0.3s">
+      <h2>Barcode lookups (Open Food Facts)</h2>
+      <p>
+        When a scanned barcode isn't already in Intake's built-in offline
+        catalog, the app sends <strong>only the barcode number</strong> over
+        an encrypted connection to Open Food Facts (openfoodfacts.org), a
+        community nutrition database, to look up the product's name and
+        nutrition facts. No other data — not your logs, not your device
+        identifiers, nothing personal — is included in that request.
+      </p>
+      <p>
+        Product data returned this way is used under the
+        <a href="https://opendatacommons.org/licenses/odbl/1-0/" target="_blank" rel="noopener">Open Database License (ODbL) v1.0</a>,
+        with attribution shown in the app's Settings screen.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="widgets-watch" style="animation-delay: 0.35s">
+      <h2>Widgets &amp; Apple Watch</h2>
+      <p>
+        Your hydration progress is shared with Intake's Home Screen widgets
+        and its Apple Watch companion app through a private App Group
+        container that lives entirely on your own device(s) — it's how
+        separate parts of the app talk to each other locally. This data
+        never leaves your device or your personal iCloud/Watch pairing.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="notifications" style="animation-delay: 0.4s">
+      <h2>Notifications</h2>
+      <p>
+        Hydration reminders are scheduled locally on your device using
+        Apple's notification framework. They're opt-in, and Intake
+        automatically suppresses reminders once you're close to your daily
+        goal so you don't get pestered. No push notification service or
+        remote server is involved.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="analytics" style="animation-delay: 0.45s">
+      <h2>Analytics</h2>
+      <p>
+        Intake uses a small first-party analytics system to understand
+        anonymous, aggregate product usage — things like "an entry was
+        created" or "a widget button was tapped." It never includes food
+        names, notes, exact nutrition values, or anything read from Apple
+        Health. We don't use any third-party analytics or advertising SDKs.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="tracking" style="animation-delay: 0.5s">
+      <h2>Tracking</h2>
+      <p>
+        Intake does not track you across other companies' apps or websites,
+        and it never asks for App Tracking Transparency permission because
+        it has nothing to track with it.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="childrens-privacy" style="animation-delay: 0.55s">
+      <h2>Children's privacy</h2>
+      <p>
+        Intake is intended for a general audience and does not knowingly
+        collect personal information from anyone, regardless of age, because
+        there is no account and no data leaves your device except as
+        described above.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="your-data" style="animation-delay: 0.6s">
+      <h2>Managing &amp; deleting your data</h2>
+      <ul>
+        <li>
+          <strong>Individual entries:</strong> swipe to delete or edit any
+          water, beverage, or meal entry directly in the app's History view.
+        </li>
+        <li>
+          <strong>Everything on this device:</strong> deleting the app
+          removes all of its locally stored data, including widget data,
+          immediately.
+        </li>
+        <li>
+          <strong>Apple Health:</strong> samples Intake has written can be
+          reviewed or deleted from
+          <code>Health app → Browse → [category] → Data Sources &amp; Access</code>,
+          independent of Intake itself.
+        </li>
+      </ul>
+      <p>
+        Because Codifya holds no copy of your data, there's nothing on our
+        end for us to access, export, or delete on your behalf — the
+        controls above are the complete picture.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="third-party-services" style="animation-delay: 0.65s">
+      <h2>Services we rely on</h2>
+      <p>
+        Intake is built almost entirely on Apple's own frameworks:
+      </p>
+      <ul>
+        <li><strong>HealthKit</strong> — optional, write-only sync to Apple Health.</li>
+        <li><strong>WidgetKit &amp; App Groups</strong> — local data sharing with widgets and the Watch app, on-device only.</li>
+        <li><strong>UserNotifications</strong> — local hydration reminders.</li>
+      </ul>
+      <p>
+        The one external service Intake talks to is
+        <strong>Open Food Facts</strong>, described above, governed by its
+        own <a href="https://world.openfoodfacts.org/privacy" target="_blank" rel="noopener">privacy policy</a>.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="changes" style="animation-delay: 0.7s">
+      <h2>Changes to this policy</h2>
+      <p>
+        If how Intake handles data ever changes, we'll update this page and
+        move the effective date at the top. We'd encourage checking back
+        occasionally, especially after an app update.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="contact" style="animation-delay: 0.75s">
+      <h2>Contact</h2>
+      <p>
+        Questions about this policy or how Intake handles data? Reach us at
+        <a href="mailto:info@codifya.com">info@codifya.com</a>. See also our
+        <a href="/intake/terms/">Terms of Use</a>.
+      </p>
+    </section>
+
+  </div>
+
+  <footer class="reveal" style="animation-delay: 0.8s">
+    <span>© 2026 Codifya. Intake.</span>
+    <a class="back-to-top" href="#top">Back to top ↑</a>
+  </footer>
+
+</div>
+
+</body>
+</html>

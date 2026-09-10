@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Terms of use for Intake, a free water, beverage, and food tracker by Codifya — including the Apple Health sync and third-party nutrition data disclaimer.">
+<title>Intake Terms of Use</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Literata:ital,opsz,wght@0,18..144,400;0,18..144,500;0,18..144,600;1,18..144,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #EFF6FC;
+    --bg-raised: #FFFFFF;
+    --ink: #12293D;
+    --ink-soft: #4C7089;
+    --ink-faint: #8CA9BB;
+    --accent: #2E9BF0;
+    --accent-ink: #0B4B78;
+    --leaf: #0E8F9E;
+    --line: rgba(18, 41, 61, 0.12);
+    --line-strong: rgba(18, 41, 61, 0.24);
+    --shadow: rgba(18, 41, 61, 0.10);
+    --font-display: "Manrope", ui-rounded, "SF Pro Rounded", system-ui, sans-serif;
+    --font-body: "Literata", Georgia, "Times New Roman", serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #081420;
+      --bg-raised: #0E1D2C;
+      --ink: #E7F1F8;
+      --ink-soft: #A9C6D8;
+      --ink-faint: #6D8A9C;
+      --accent: #5FB6FF;
+      --accent-ink: #EAF6FF;
+      --leaf: #52D4CF;
+      --line: rgba(231, 241, 248, 0.14);
+      --line-strong: rgba(231, 241, 248, 0.26);
+      --shadow: rgba(0, 0, 0, 0.40);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #081420;
+    --bg-raised: #0E1D2C;
+    --ink: #E7F1F8;
+    --ink-soft: #A9C6D8;
+    --ink-faint: #6D8A9C;
+    --accent: #5FB6FF;
+    --accent-ink: #EAF6FF;
+    --leaf: #52D4CF;
+    --line: rgba(231, 241, 248, 0.14);
+    --line-strong: rgba(231, 241, 248, 0.26);
+    --shadow: rgba(0, 0, 0, 0.40);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: rise 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 6rem;
+  }
+
+  /* ---- Masthead ---- */
+
+  .masthead {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.75rem;
+  }
+
+  .masthead img {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px var(--shadow), inset 0 0 0 1px var(--line-strong);
+    flex-shrink: 0;
+  }
+
+  .masthead-text h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin: 0 0 0.15rem;
+    letter-spacing: -0.01em;
+  }
+
+  .masthead-text p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
+    align-items: center;
+    margin-bottom: 3.25rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    background: color-mix(in srgb, var(--accent) 18%, var(--bg-raised));
+    border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+    padding: 0.32rem 0.7rem;
+    border-radius: 100px;
+  }
+
+  .badge .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .meta-plain {
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+  }
+
+  /* ---- Intro ---- */
+
+  .intro {
+    font-size: 1.12rem;
+    color: var(--ink);
+    max-width: 62ch;
+    margin-bottom: 3rem;
+  }
+
+  .intro strong { color: var(--ink); font-weight: 600; }
+
+  /* ---- Trail-rail sections ---- */
+
+  .trail {
+    position: relative;
+    padding-left: 2.1rem;
+  }
+
+  .trail::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 0.55rem;
+    bottom: 2.4rem;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--line-strong), var(--line) 92%, transparent);
+  }
+
+  section.entry {
+    position: relative;
+    padding-bottom: 2.6rem;
+  }
+
+  section.entry::before {
+    content: "";
+    position: absolute;
+    left: -2.1rem;
+    top: 0.5rem;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+  }
+
+  section.entry h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.28rem;
+    margin: 0 0 0.85rem;
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+  }
+
+  section.entry h3 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--ink-soft);
+    margin: 1.4rem 0 0.5rem;
+  }
+
+  section.entry p {
+    margin: 0 0 0.9rem;
+    max-width: 64ch;
+  }
+
+  section.entry p:last-child { margin-bottom: 0; }
+
+  section.entry ul {
+    margin: 0 0 0.9rem;
+    padding-left: 1.2rem;
+  }
+
+  section.entry li {
+    margin-bottom: 0.5rem;
+    max-width: 60ch;
+  }
+
+  section.entry li::marker {
+    color: var(--accent);
+  }
+
+  a {
+    color: var(--leaf);
+    text-decoration-color: color-mix(in srgb, var(--leaf) 45%, transparent);
+    text-underline-offset: 0.18em;
+  }
+
+  a:hover { text-decoration-thickness: 2px; }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  .callout {
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--leaf);
+    border-radius: 10px;
+    padding: 0.9rem 1.1rem;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin: 0.9rem 0;
+  }
+
+  .callout strong { color: var(--ink); }
+
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.87em;
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    padding: 0.1em 0.4em;
+    border-radius: 5px;
+    color: var(--accent-ink);
+  }
+
+  /* ---- Footer ---- */
+
+  footer {
+    margin-top: 1.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    font-size: 0.88rem;
+    color: var(--ink-faint);
+  }
+
+  footer a { color: var(--ink-soft); font-weight: 600; }
+
+  .back-to-top {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  @media (max-width: 480px) {
+    .page { padding: 3rem 1.25rem 4rem; }
+    .masthead img { width: 48px; height: 48px; }
+    .masthead-text h1 { font-size: 1.3rem; }
+    .trail { padding-left: 1.6rem; }
+    section.entry::before { left: -1.6rem; }
+  }
+</style>
+
+</head>
+<body>
+<div class="page" id="top">
+
+  <div class="masthead reveal">
+    <img src="/intake/icon.png" alt="Intake app icon" />
+    <div class="masthead-text">
+      <h1>Intake</h1>
+      <p>Terms of Use</p>
+    </div>
+  </div>
+
+  <div class="meta-row reveal" style="animation-delay: 0.05s">
+    <span class="badge"><span class="dot"></span>Effective September 10, 2026</span>
+    <span class="meta-plain">Published by Codifya</span>
+    <span class="meta-plain">·</span>
+    <span class="meta-plain"><a href="mailto:info@codifya.com" style="color:var(--ink-faint); text-decoration-color: var(--line-strong);">info@codifya.com</a></span>
+  </div>
+
+  <p class="intro reveal" style="animation-delay: 0.1s">
+    These terms cover your use of Intake, a water, beverage, and food
+    tracker published by Codifya. By downloading or using the app, you
+    agree to them. <strong>Intake is currently free with no in-app
+    purchases</strong> — if that ever changes, we'll update this page
+    before it does.
+  </p>
+
+  <div class="trail">
+
+    <section class="entry reveal" id="the-app" style="animation-delay: 0.15s">
+      <h2>The app</h2>
+      <p>
+        Intake is licensed to you for personal, non-commercial use on
+        devices you own or control, subject to Apple's
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Licensed Application End User License Agreement</a>,
+        which applies unless these terms say otherwise. We may update the
+        app — new features, tracking categories, or fixes — at any time.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="your-data" style="animation-delay: 0.2s">
+      <h2>Your data &amp; content</h2>
+      <p>
+        Everything you log — water, beverages, meals, notes — is yours. It's
+        stored locally on your device by default; see our
+        <a href="/intake/privacy/">Privacy Policy</a> for exactly how the
+        optional Apple Health sync, widgets, and Watch companion handle
+        that data on-device.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="health-disclaimer" style="animation-delay: 0.25s">
+      <h2>Not a medical device</h2>
+      <p>
+        Intake is a personal tracking tool, not a medical device and not a
+        substitute for professional medical, nutritional, or dietary advice.
+        Hydration goals, calorie estimates, and macro totals are
+        approximations meant to help you build awareness of your habits —
+        they are not diagnoses and should not be used to make medical
+        decisions. Always consult a qualified healthcare provider about your
+        health, diet, or hydration needs, especially before changing either
+        based on anything the app shows you.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="third-party-content" style="animation-delay: 0.3s">
+      <h2>Third-party nutrition data</h2>
+      <p>
+        Product names and nutrition facts returned by barcode scans that
+        aren't in Intake's built-in catalog come from
+        <a href="https://world.openfoodfacts.org/" target="_blank" rel="noopener">Open Food Facts</a>,
+        a community-maintained, crowdsourced database used under the
+        <a href="https://opendatacommons.org/licenses/odbl/1-0/" target="_blank" rel="noopener">Open Database License (ODbL) v1.0</a>.
+        Codifya doesn't create, verify, or guarantee the accuracy of this
+        third-party data — always check packaging directly for anything
+        that matters to your health, such as allergens.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="acceptable-use" style="animation-delay: 0.35s">
+      <h2>Acceptable use</h2>
+      <p>
+        Use Intake as intended: don't attempt to reverse-engineer, decompile,
+        or extract assets from the app beyond what's permitted by applicable
+        law, and don't use the barcode scanner or camera access for anything
+        other than logging your own consumption.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="ownership" style="animation-delay: 0.4s">
+      <h2>Ownership</h2>
+      <p>
+        Intake — its code, design, and branding — belongs to Codifya.
+        Nothing here transfers ownership of the app to you; you're granted a
+        license to use it, not a copy to redistribute or repurpose. Your own
+        logged data remains yours, as described above.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="warranty" style="animation-delay: 0.45s">
+      <h2>No warranty, limited liability</h2>
+      <p>
+        Intake is provided "as is." We work to keep it accurate and free of
+        bugs, but we don't guarantee it will always be error-free, available
+        without interruption, or perfectly compatible with every device or
+        HealthKit configuration. To the extent permitted by law, Codifya
+        isn't liable for indirect or incidental damages arising from your
+        use of the app, including decisions made based on tracked data.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="termination" style="animation-delay: 0.5s">
+      <h2>Termination</h2>
+      <p>
+        You can stop using Intake at any time by deleting it, which removes
+        its locally stored data from your device. We may discontinue or
+        change the app at any time; where we reasonably can, we'll give
+        notice of significant changes in advance.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="changes" style="animation-delay: 0.55s">
+      <h2>Changes to these terms</h2>
+      <p>
+        If we materially change these terms, we'll update this page and move
+        the effective date at the top. Continuing to use the app after a
+        change means you accept the updated terms.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="governing-law" style="animation-delay: 0.6s">
+      <h2>Governing law</h2>
+      <p>
+        These terms are governed by the laws of the Republic of Türkiye,
+        without regard to conflict-of-law principles, except where local
+        consumer-protection law in your country grants you additional rights
+        that can't be waived.
+      </p>
+    </section>
+
+    <section class="entry reveal" id="contact" style="animation-delay: 0.65s">
+      <h2>Contact</h2>
+      <p>
+        Questions about these terms? Reach us at
+        <a href="mailto:info@codifya.com">info@codifya.com</a>. See also our
+        <a href="/intake/privacy/">Privacy Policy</a>.
+      </p>
+    </section>
+
+  </div>
+
+  <footer class="reveal" style="animation-delay: 0.7s">
+    <span>© 2026 Codifya. Intake.</span>
+    <a class="back-to-top" href="#top">Back to top ↑</a>
+  </footer>
+
+</div>
+
+</body>
+</html>
