@@ -1,0 +1,870 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Support and frequently asked questions for Pagela, the calm iPad reader for EPUB and PDF by Codifya.">
+<title>Pagela Support</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Literata:ital,opsz,wght@0,18..144,400;0,18..144,500;0,18..144,600;1,18..144,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #F6F0E3;
+    --bg-raised: #FFFDF8;
+    --ink: #26211C;
+    --ink-soft: #5C4F42;
+    --ink-faint: #9C8E7C;
+    --accent: #8B5E2A;
+    --accent-ink: #4A3218;
+    --leaf: #426B26;
+    --line: rgba(38, 33, 28, 0.12);
+    --line-strong: rgba(38, 33, 28, 0.24);
+    --shadow: rgba(38, 33, 28, 0.10);
+    --font-display: "Manrope", ui-rounded, "SF Pro Rounded", system-ui, sans-serif;
+    --font-body: "Literata", Georgia, "Times New Roman", serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #16120E;
+      --bg-raised: #211B15;
+      --ink: #F3EBDD;
+      --ink-soft: #CDBFA9;
+      --ink-faint: #8E806C;
+      --accent: #E0A45A;
+      --accent-ink: #FFF3E2;
+      --leaf: #9DC75A;
+      --line: rgba(243, 235, 221, 0.14);
+      --line-strong: rgba(243, 235, 221, 0.26);
+      --shadow: rgba(0, 0, 0, 0.45);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #16120E;
+    --bg-raised: #211B15;
+    --ink: #F3EBDD;
+    --ink-soft: #CDBFA9;
+    --ink-faint: #8E806C;
+    --accent: #E0A45A;
+    --accent-ink: #FFF3E2;
+    --leaf: #9DC75A;
+    --line: rgba(243, 235, 221, 0.14);
+    --line-strong: rgba(243, 235, 221, 0.26);
+    --shadow: rgba(0, 0, 0, 0.45);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: rise 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 6rem;
+  }
+
+  /* ---- Masthead ---- */
+
+  .masthead {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.75rem;
+  }
+
+  .masthead img {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px var(--shadow), inset 0 0 0 1px var(--line-strong);
+    flex-shrink: 0;
+  }
+
+  .masthead-text h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin: 0 0 0.15rem;
+    letter-spacing: -0.01em;
+  }
+
+  .masthead-text p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
+    align-items: center;
+    margin-bottom: 3.25rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    background: color-mix(in srgb, var(--accent) 18%, var(--bg-raised));
+    border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+    padding: 0.32rem 0.7rem;
+    border-radius: 100px;
+  }
+
+  .badge .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .meta-plain {
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+  }
+
+  /* ---- Intro ---- */
+
+  .intro {
+    font-size: 1.12rem;
+    color: var(--ink);
+    max-width: 62ch;
+    margin-bottom: 3rem;
+  }
+
+  .intro strong { color: var(--ink); font-weight: 600; }
+
+  /* ---- Trail-rail sections ---- */
+
+  .trail {
+    position: relative;
+    padding-left: 2.1rem;
+  }
+
+  .trail::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 0.55rem;
+    bottom: 2.4rem;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--line-strong), var(--line) 92%, transparent);
+  }
+
+  section.entry {
+    position: relative;
+    padding-bottom: 2.6rem;
+  }
+
+  section.entry::before {
+    content: "";
+    position: absolute;
+    left: -2.1rem;
+    top: 0.5rem;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+  }
+
+  section.entry h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.28rem;
+    margin: 0 0 0.85rem;
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+  }
+
+  section.entry h3 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--ink-soft);
+    margin: 1.4rem 0 0.5rem;
+  }
+
+  section.entry p {
+    margin: 0 0 0.9rem;
+    max-width: 64ch;
+  }
+
+  section.entry p:last-child { margin-bottom: 0; }
+
+  section.entry ul {
+    margin: 0 0 0.9rem;
+    padding-left: 1.2rem;
+  }
+
+  section.entry li {
+    margin-bottom: 0.5rem;
+    max-width: 60ch;
+  }
+
+  section.entry li::marker {
+    color: var(--accent);
+  }
+
+  a {
+    color: var(--leaf);
+    text-decoration-color: color-mix(in srgb, var(--leaf) 45%, transparent);
+    text-underline-offset: 0.18em;
+  }
+
+  a:hover { text-decoration-thickness: 2px; }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  .callout {
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--leaf);
+    border-radius: 10px;
+    padding: 0.9rem 1.1rem;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin: 0.9rem 0;
+  }
+
+  .callout strong { color: var(--ink); }
+
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.87em;
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    padding: 0.1em 0.4em;
+    border-radius: 5px;
+    color: var(--accent-ink);
+  }
+
+  /* ---- Footer ---- */
+
+  footer {
+    margin-top: 1.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    font-size: 0.88rem;
+    color: var(--ink-faint);
+  }
+
+  footer a { color: var(--ink-soft); font-weight: 600; }
+
+  .back-to-top {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  @media (max-width: 480px) {
+    .page { padding: 3rem 1.25rem 4rem; }
+    .masthead img { width: 48px; height: 48px; }
+    .masthead-text h1 { font-size: 1.3rem; }
+    .trail { padding-left: 1.6rem; }
+    section.entry::before { left: -1.6rem; }
+  }
+
+  /* ---- Language switcher & language blocks ---- */
+
+  .lang-switch {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.4rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .lang-switch a {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--ink-soft);
+    text-decoration: none;
+    background: var(--bg-raised);
+    border: 1px solid var(--line-strong);
+    padding: 0.3rem 0.75rem;
+    border-radius: 100px;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .lang-switch a:hover {
+    border-color: var(--accent);
+    color: var(--accent-ink);
+  }
+
+  .lang-block { scroll-margin-top: 1.5rem; }
+
+  .lang-block + .lang-block {
+    margin-top: 1rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .lang-head { margin-bottom: 1.75rem; }
+
+  .lang-head h2 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.35rem;
+    margin: 0 0 0.3rem;
+    letter-spacing: -0.01em;
+  }
+
+  .lang-head p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+  }
+</style>
+
+</head>
+<body>
+<div class="page" id="top">
+
+  <nav class="lang-switch reveal" aria-label="Language / Dil / Langue / Idioma">
+    <a href="#en" hreflang="en" lang="en">English</a>
+    <a href="#tr" hreflang="tr" lang="tr">Türkçe</a>
+    <a href="#fr" hreflang="fr" lang="fr">Français</a>
+    <a href="#es" hreflang="es" lang="es">Español</a>
+  </nav>
+
+  <div class="masthead reveal">
+    <img src="/pagela/icon.png" alt="Pagela app icon" />
+    <div class="masthead-text">
+      <h1>Pagela</h1>
+      <p>Support &amp; FAQ</p>
+    </div>
+  </div>
+
+  <div class="meta-row reveal" style="animation-delay: 0.05s">
+    <span class="badge"><span class="dot"></span>Last updated 28 September 2026</span>
+    <span class="meta-plain">Published by Codifya</span>
+    <span class="meta-plain">·</span>
+    <span class="meta-plain"><a href="mailto:info@codifya.com" style="color:var(--ink-faint); text-decoration-color: var(--line-strong);">info@codifya.com</a></span>
+  </div>
+
+  <section class="lang-block" id="en" lang="en">
+
+    <p class="intro reveal" style="animation-delay: 0.1s">
+      Need help with Pagela? Most questions are answered below. If you can't
+      find what you're looking for, email us at
+      <a href="mailto:info@codifya.com">info@codifya.com</a> and we'll get back
+      to you as soon as we can.
+    </p>
+
+    <div class="trail">
+
+      <section class="entry reveal" id="en-add-book" style="animation-delay: 0.15s">
+        <h2>Adding a book</h2>
+        <p>
+          Pagela reads your own DRM-free EPUB and PDF files. There are three
+          ways to add one:
+        </p>
+        <ul>
+          <li>In the <strong>Library</strong>, tap <strong>+</strong> and choose the
+            file.</li>
+          <li>In the <strong>Files</strong> app, touch and hold the file, tap
+            <strong>Share</strong> and choose <strong>Pagela</strong>.</li>
+          <li>Drag EPUB or PDF files from another app, such as Files, and drop
+            them into Pagela.</li>
+        </ul>
+      </section>
+
+      <section class="entry reveal" id="en-wont-open" style="animation-delay: 0.20s">
+        <h2>A book won't open</h2>
+        <p>
+          There are two usual reasons:
+        </p>
+        <ul>
+          <li><strong>The book is DRM-protected.</strong> Pagela can't open
+            copy-protected books. If the book came from a store that uses DRM,
+            it can only be read in that store's own app.</li>
+          <li><strong>The file is damaged or isn't a valid EPUB or PDF.</strong>
+            Try downloading the file again or exporting it once more from its
+            source, then add it again.</li>
+        </ul>
+      </section>
+
+      <section class="entry reveal" id="en-icloud" style="animation-delay: 0.25s">
+        <h2>iCloud sync &amp; books marked &ldquo;Missing&rdquo;</h2>
+        <p>
+          When you're signed in to iCloud, Pagela syncs your notes, quotes,
+          Apple Pencil ink, reading positions and statistics through your own
+          private iCloud, so they follow you to your other iPads. The book files
+          themselves are not synced.
+        </p>
+        <p>
+          That's why, on a second iPad, a book can appear in the Library marked
+          <strong>Missing</strong>. Put the same file on that iPad (for example
+          in iCloud Drive or On My iPad), then tap the book, choose
+          <strong>Locate again</strong> and select the file.
+        </p>
+        <p>
+          If your iCloud storage is full, sync pauses until you free up some
+          space.
+        </p>
+      </section>
+
+      <section class="entry reveal" id="en-pencil" style="animation-delay: 0.30s">
+        <h2>Marking passages with Apple Pencil</h2>
+        <p>
+          While reading, enter drawing mode and mark the passage with Apple
+          Pencil. About a second after you stop, Pagela saves it as a quote —
+          an image of the passage together with its text — in
+          <strong>Quotes</strong>. Tap any quote card to jump straight back to
+          that passage in the book.
+        </p>
+      </section>
+
+      <section class="entry reveal" id="en-language" style="animation-delay: 0.35s">
+        <h2>Changing the language</h2>
+        <p>
+          Pagela is available in English, Turkish, French and Spanish. To choose
+          the app's language, open <code>Settings → Pagela → Language</code> on
+          your iPad.
+        </p>
+      </section>
+
+      <section class="entry reveal" id="en-statistics" style="animation-delay: 0.40s">
+        <h2>Turning off reading tracking or deleting statistics</h2>
+        <p>
+          Reading statistics are calculated on your iPad and count only active
+          reading time. In Pagela's Settings:
+        </p>
+        <ul>
+          <li>Turn off <strong>Reading Tracking</strong> to stop recording new
+            reading sessions. Your existing statistics are kept.</li>
+          <li>Tap <strong>Delete All Statistics</strong> to permanently remove
+            your reading sessions and summaries. Your books, notes and quotes
+            are not affected.</li>
+        </ul>
+      </section>
+
+      <section class="entry reveal" id="en-contact" style="animation-delay: 0.45s">
+        <h2>Contact us</h2>
+        <p>
+          Still stuck? Email <a href="mailto:info@codifya.com">info@codifya.com</a>. It helps if you include your iPad model,
+          your iPadOS version and a short description of what happened. See also
+          our <a href="/pagela/privacy/">Privacy Policy</a> and
+          <a href="/pagela/terms/">Terms of Use</a>.
+        </p>
+      </section>
+
+    </div>
+
+  </section>
+
+  <section class="lang-block" id="tr" lang="tr">
+
+    <div class="lang-head">
+      <h2>Destek ve SSS</h2>
+      <p>Son güncelleme: 28 Eylül 2026</p>
+    </div>
+
+    <p class="intro">
+      Pagela ile ilgili yardıma mı ihtiyacın var? Soruların çoğunun yanıtı
+      aşağıda. Aradığını bulamazsan bize
+      <a href="mailto:info@codifya.com">info@codifya.com</a> adresinden yaz,
+      en kısa sürede dönüş yapalım.
+    </p>
+
+    <div class="trail">
+
+      <section class="entry" id="tr-add-book">
+        <h2>Kitap eklemek</h2>
+        <p>
+          Pagela, kendi DRM'siz EPUB ve PDF dosyalarını okur. Kitap eklemenin
+          üç yolu var:
+        </p>
+        <ul>
+          <li><strong>Kitaplık</strong> ekranında <strong>+</strong> düğmesine
+            dokun ve dosyayı seç.</li>
+          <li><strong>Dosyalar</strong> uygulamasında dosyaya basılı tut,
+            <strong>Paylaş</strong>'a dokun ve <strong>Pagela</strong>'yı seç.</li>
+          <li>EPUB ya da PDF dosyalarını Dosyalar gibi başka bir uygulamadan
+            sürükleyip Pagela'ya bırak.</li>
+        </ul>
+      </section>
+
+      <section class="entry" id="tr-wont-open">
+        <h2>Kitap açılmıyor</h2>
+        <p>
+          Bunun genellikle iki nedeni olur:
+        </p>
+        <ul>
+          <li><strong>Kitap DRM korumalı.</strong> Pagela kopya korumalı kitapları
+            açamaz. Kitabı DRM kullanan bir mağazadan aldıysan, onu yalnızca o
+            mağazanın kendi uygulamasında okuyabilirsin.</li>
+          <li><strong>Dosya bozuk ya da geçerli bir EPUB veya PDF değil.</strong>
+            Dosyayı yeniden indirmeyi ya da kaynağından tekrar dışa aktarmayı
+            dene, ardından yeniden ekle.</li>
+        </ul>
+      </section>
+
+      <section class="entry" id="tr-icloud">
+        <h2>iCloud eşitleme ve &ldquo;Eksik&rdquo; görünen kitaplar</h2>
+        <p>
+          iCloud'a giriş yaptığında Pagela notlarını, alıntılarını, Apple Pencil
+          çizimlerini, okuma konumlarını ve istatistiklerini kendi özel iCloud
+          alanın üzerinden eşitler; böylece diğer iPad'lerinde de seninle
+          olurlar. Kitap dosyalarının kendisi ise eşitlenmez.
+        </p>
+        <p>
+          Bu yüzden ikinci bir iPad'de bir kitap, Kitaplık'ta
+          <strong>Eksik</strong> olarak görünebilir. Aynı dosyayı o iPad'e de koy
+          (örneğin iCloud Drive'a ya da iPad'imde klasörüne), ardından kitaba
+          dokun, <strong>Yeniden bul</strong>'u seç ve dosyayı göster.
+        </p>
+        <p>
+          iCloud depolama alanın dolarsa, yer açana kadar eşitleme duraklar.
+        </p>
+      </section>
+
+      <section class="entry" id="tr-pencil">
+        <h2>Apple Pencil ile bölüm işaretlemek</h2>
+        <p>
+          Okurken çizim moduna geç ve istediğin bölümü Apple Pencil ile işaretle.
+          Durduktan yaklaşık bir saniye sonra Pagela o bölümü bir alıntı olarak
+          (bölümün görüntüsü ve metniyle birlikte) <strong>Alıntılar</strong>'a
+          kaydeder. Bir alıntı kartına dokunarak kitapta doğrudan o bölüme
+          dönebilirsin.
+        </p>
+      </section>
+
+      <section class="entry" id="tr-language">
+        <h2>Dili değiştirmek</h2>
+        <p>
+          Pagela İngilizce, Türkçe, Fransızca ve İspanyolca kullanılabilir.
+          Uygulamanın dilini seçmek için iPad'inde <code>Ayarlar → Pagela →
+          Dil</code> yolunu izle.
+        </p>
+      </section>
+
+      <section class="entry" id="tr-statistics">
+        <h2>Okuma takibini kapatmak ya da istatistikleri silmek</h2>
+        <p>
+          Okuma istatistiklerin iPad'inde hesaplanır ve yalnızca gerçekten
+          okuduğun süreyi sayar. Pagela'nın Ayarlar ekranında:
+        </p>
+        <ul>
+          <li>Yeni okuma oturumlarının kaydedilmesini durdurmak için
+            <strong>Okuma Takibi</strong>'ni kapat. Mevcut istatistiklerin
+            korunur.</li>
+          <li>Okuma oturumlarını ve özetleri kalıcı olarak kaldırmak için
+            <strong>Tüm İstatistikleri Sil</strong>'e dokun. Kitapların,
+            notların ve alıntıların etkilenmez.</li>
+        </ul>
+      </section>
+
+      <section class="entry" id="tr-contact">
+        <h2>Bize ulaş</h2>
+        <p>
+          Hâlâ takıldığın bir yer mi var? <a href="mailto:info@codifya.com">info@codifya.com</a> adresine yaz. iPad modelini,
+          iPadOS sürümünü ve ne olduğunu kısaca yazarsan daha hızlı yardımcı
+          olabiliriz. <a href="/pagela/privacy/">Gizlilik Politikası</a> ve
+          <a href="/pagela/terms/">Kullanım Koşulları</a> sayfalarına da göz
+          atabilirsin.
+        </p>
+      </section>
+
+    </div>
+
+  </section>
+
+  <section class="lang-block" id="fr" lang="fr">
+
+    <div class="lang-head">
+      <h2>Assistance et FAQ</h2>
+      <p>Dernière mise à jour&nbsp;: 28&nbsp;septembre 2026</p>
+    </div>
+
+    <p class="intro">
+      Besoin d'aide avec Pagela&nbsp;? Vous trouverez ci-dessous la réponse à la
+      plupart des questions. Si ce n'est pas le cas, écrivez-nous à
+      <a href="mailto:info@codifya.com">info@codifya.com</a>&nbsp;: nous vous
+      répondrons dès que possible.
+    </p>
+
+    <div class="trail">
+
+      <section class="entry" id="fr-add-book">
+        <h2>Ajouter un livre</h2>
+        <p>
+          Pagela lit vos propres fichiers EPUB et PDF sans DRM. Il y a trois
+          façons d'en ajouter un&nbsp;:
+        </p>
+        <ul>
+          <li>Dans la <strong>Bibliothèque</strong>, touchez <strong>+</strong>
+            puis choisissez le fichier.</li>
+          <li>Dans l'app <strong>Fichiers</strong>, maintenez le doigt sur le
+            fichier, touchez <strong>Partager</strong> puis choisissez
+            <strong>Pagela</strong>.</li>
+          <li>Faites glisser des fichiers EPUB ou PDF depuis une autre app,
+            comme Fichiers, et déposez-les dans Pagela.</li>
+        </ul>
+      </section>
+
+      <section class="entry" id="fr-wont-open">
+        <h2>Un livre ne s'ouvre pas</h2>
+        <p>
+          Il y a généralement deux raisons&nbsp;:
+        </p>
+        <ul>
+          <li><strong>Le livre est protégé par DRM.</strong> Pagela ne peut pas
+            ouvrir les livres protégés contre la copie. Si le livre provient
+            d'une librairie qui utilise des DRM, il ne peut être lu que dans
+            l'app de cette librairie.</li>
+          <li><strong>Le fichier est endommagé ou n'est pas un EPUB ou un PDF
+            valide.</strong> Téléchargez-le de nouveau ou exportez-le une
+            nouvelle fois depuis sa source, puis ajoutez-le à nouveau.</li>
+        </ul>
+      </section>
+
+      <section class="entry" id="fr-icloud">
+        <h2>Synchronisation iCloud et livres «&nbsp;Manquant&nbsp;»</h2>
+        <p>
+          Lorsque vous êtes connecté à iCloud, Pagela synchronise vos notes,
+          citations, tracés à l'Apple Pencil, positions de lecture et
+          statistiques via votre propre iCloud privé, pour que vous les
+          retrouviez sur vos autres iPad. Les fichiers des livres, eux, ne sont
+          pas synchronisés.
+        </p>
+        <p>
+          C'est pourquoi, sur un deuxième iPad, un livre peut apparaître dans la
+          Bibliothèque avec la mention <strong>Manquant</strong>. Placez le même
+          fichier sur cet iPad (par exemple dans iCloud Drive ou dans «&nbsp;Sur
+          mon iPad&nbsp;»), puis touchez le livre, choisissez
+          <strong>Retrouver</strong> et sélectionnez le fichier.
+        </p>
+        <p>
+          Si votre stockage iCloud est plein, la synchronisation est suspendue
+          jusqu'à ce que vous libériez de l'espace.
+        </p>
+      </section>
+
+      <section class="entry" id="fr-pencil">
+        <h2>Marquer un passage à l'Apple Pencil</h2>
+        <p>
+          Pendant la lecture, passez en mode dessin et marquez le passage à
+          l'Apple Pencil. Environ une seconde après que vous vous êtes arrêté,
+          Pagela l'enregistre comme citation — une image du passage accompagnée
+          de son texte — dans <strong>Citations</strong>. Touchez une carte de
+          citation pour revenir directement à ce passage dans le livre.
+        </p>
+      </section>
+
+      <section class="entry" id="fr-language">
+        <h2>Changer de langue</h2>
+        <p>
+          Pagela est disponible en anglais, en turc, en français et en espagnol.
+          Pour choisir la langue de l'app, ouvrez <code>Réglages → Pagela →
+          Langue</code> sur votre iPad.
+        </p>
+      </section>
+
+      <section class="entry" id="fr-statistics">
+        <h2>Désactiver le suivi de lecture ou supprimer les statistiques</h2>
+        <p>
+          Les statistiques de lecture sont calculées sur votre iPad et ne
+          comptent que le temps de lecture active. Dans les Réglages de
+          Pagela&nbsp;:
+        </p>
+        <ul>
+          <li>Désactivez le <strong>Suivi de lecture</strong> pour ne plus
+            enregistrer de nouvelles sessions. Vos statistiques existantes sont
+            conservées.</li>
+          <li>Touchez <strong>Supprimer toutes les statistiques</strong> pour
+            effacer définitivement vos sessions de lecture et leurs résumés. Vos
+            livres, notes et citations ne sont pas touchés.</li>
+        </ul>
+      </section>
+
+      <section class="entry" id="fr-contact">
+        <h2>Nous contacter</h2>
+        <p>
+          Toujours bloqué&nbsp;? Écrivez à <a href="mailto:info@codifya.com">info@codifya.com</a>. Pour nous aider, indiquez le
+          modèle de votre iPad, votre version d'iPadOS et une brève description
+          du problème. Consultez aussi notre
+          <a href="/pagela/privacy/">Politique de confidentialité</a> et nos
+          <a href="/pagela/terms/">Conditions d'utilisation</a>.
+        </p>
+      </section>
+
+    </div>
+
+  </section>
+
+  <section class="lang-block" id="es" lang="es">
+
+    <div class="lang-head">
+      <h2>Asistencia y preguntas frecuentes</h2>
+      <p>Última actualización: 28 de septiembre de 2026</p>
+    </div>
+
+    <p class="intro">
+      ¿Necesitas ayuda con Pagela? Aquí abajo encontrarás la respuesta a la
+      mayoría de las preguntas. Si no das con lo que buscas, escríbenos a
+      <a href="mailto:info@codifya.com">info@codifya.com</a> y te responderemos
+      lo antes posible.
+    </p>
+
+    <div class="trail">
+
+      <section class="entry" id="es-add-book">
+        <h2>Añadir un libro</h2>
+        <p>
+          Pagela lee tus propios archivos EPUB y PDF sin DRM. Hay tres formas de
+          añadir uno:
+        </p>
+        <ul>
+          <li>En la <strong>Biblioteca</strong>, toca <strong>+</strong> y elige
+            el archivo.</li>
+          <li>En la app <strong>Archivos</strong>, mantén pulsado el archivo, toca
+            <strong>Compartir</strong> y elige <strong>Pagela</strong>.</li>
+          <li>Arrastra archivos EPUB o PDF desde otra app, como Archivos, y
+            suéltalos en Pagela.</li>
+        </ul>
+      </section>
+
+      <section class="entry" id="es-wont-open">
+        <h2>Un libro no se abre</h2>
+        <p>
+          Suele deberse a uno de estos dos motivos:
+        </p>
+        <ul>
+          <li><strong>El libro está protegido con DRM.</strong> Pagela no puede
+            abrir libros con protección anticopia. Si compraste el libro en una
+            tienda que usa DRM, solo podrás leerlo en la app de esa tienda.</li>
+          <li><strong>El archivo está dañado o no es un EPUB o PDF
+            válido.</strong> Vuelve a descargarlo o a exportarlo desde su
+            origen y añádelo de nuevo.</li>
+        </ul>
+      </section>
+
+      <section class="entry" id="es-icloud">
+        <h2>Sincronización con iCloud y libros marcados como «Falta»</h2>
+        <p>
+          Cuando has iniciado sesión en iCloud, Pagela sincroniza tus notas,
+          citas, trazos con el Apple Pencil, posiciones de lectura y
+          estadísticas a través de tu propio iCloud privado, para que te
+          acompañen en tus otros iPad. Los archivos de los libros, en cambio, no
+          se sincronizan.
+        </p>
+        <p>
+          Por eso, en un segundo iPad, un libro puede aparecer en la Biblioteca
+          marcado como <strong>Falta</strong>. Guarda el mismo archivo en ese
+          iPad (por ejemplo, en iCloud Drive o en «En mi iPad»), toca el libro,
+          elige <strong>Buscar de nuevo</strong> y selecciona el archivo.
+        </p>
+        <p>
+          Si tu almacenamiento de iCloud está lleno, la sincronización se
+          detiene hasta que liberes espacio.
+        </p>
+      </section>
+
+      <section class="entry" id="es-pencil">
+        <h2>Marcar pasajes con el Apple Pencil</h2>
+        <p>
+          Mientras lees, entra en el modo dibujo y marca el pasaje con el Apple
+          Pencil. Más o menos un segundo después de que pares, Pagela lo guarda
+          como cita —una imagen del pasaje junto con su texto— en
+          <strong>Citas</strong>. Toca cualquier tarjeta de cita para volver
+          directamente a ese pasaje del libro.
+        </p>
+      </section>
+
+      <section class="entry" id="es-language">
+        <h2>Cambiar el idioma</h2>
+        <p>
+          Pagela está disponible en inglés, turco, francés y español. Para elegir
+          el idioma de la app, ve a <code>Ajustes → Pagela → Idioma</code> en tu
+          iPad.
+        </p>
+      </section>
+
+      <section class="entry" id="es-statistics">
+        <h2>Desactivar el seguimiento de lectura o eliminar las estadísticas</h2>
+        <p>
+          Las estadísticas de lectura se calculan en tu iPad y solo cuentan el
+          tiempo de lectura activa. En los Ajustes de Pagela:
+        </p>
+        <ul>
+          <li>Desactiva el <strong>Seguimiento de lectura</strong> para dejar de
+            registrar nuevas sesiones. Tus estadísticas actuales se conservan.</li>
+          <li>Toca <strong>Eliminar todas las estadísticas</strong> para borrar
+            para siempre tus sesiones de lectura y sus resúmenes. Tus libros,
+            notas y citas no se ven afectados.</li>
+        </ul>
+      </section>
+
+      <section class="entry" id="es-contact">
+        <h2>Contacto</h2>
+        <p>
+          ¿Sigues con problemas? Escribe a <a href="mailto:info@codifya.com">info@codifya.com</a>. Nos ayuda mucho que nos
+          indiques tu modelo de iPad, tu versión de iPadOS y una breve
+          descripción de lo que ha pasado. Consulta también nuestra
+          <a href="/pagela/privacy/">Política de privacidad</a> y nuestros
+          <a href="/pagela/terms/">Términos de uso</a>.
+        </p>
+      </section>
+
+    </div>
+
+  </section>
+
+  <footer class="reveal" style="animation-delay: 0.50s">
+    <span>© 2026 Codifya. Pagela.</span>
+    <a class="back-to-top" href="#top">Back to top ↑</a>
+  </footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,954 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Terms of use for Pagela, an iPad reader for DRM-free EPUB and PDF books by Codifya — including your responsibility for the books you import and backups.">
+<title>Pagela Terms of Use</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Literata:ital,opsz,wght@0,18..144,400;0,18..144,500;0,18..144,600;1,18..144,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #F6F0E3;
+    --bg-raised: #FFFDF8;
+    --ink: #26211C;
+    --ink-soft: #5C4F42;
+    --ink-faint: #9C8E7C;
+    --accent: #8B5E2A;
+    --accent-ink: #4A3218;
+    --leaf: #426B26;
+    --line: rgba(38, 33, 28, 0.12);
+    --line-strong: rgba(38, 33, 28, 0.24);
+    --shadow: rgba(38, 33, 28, 0.10);
+    --font-display: "Manrope", ui-rounded, "SF Pro Rounded", system-ui, sans-serif;
+    --font-body: "Literata", Georgia, "Times New Roman", serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #16120E;
+      --bg-raised: #211B15;
+      --ink: #F3EBDD;
+      --ink-soft: #CDBFA9;
+      --ink-faint: #8E806C;
+      --accent: #E0A45A;
+      --accent-ink: #FFF3E2;
+      --leaf: #9DC75A;
+      --line: rgba(243, 235, 221, 0.14);
+      --line-strong: rgba(243, 235, 221, 0.26);
+      --shadow: rgba(0, 0, 0, 0.45);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #16120E;
+    --bg-raised: #211B15;
+    --ink: #F3EBDD;
+    --ink-soft: #CDBFA9;
+    --ink-faint: #8E806C;
+    --accent: #E0A45A;
+    --accent-ink: #FFF3E2;
+    --leaf: #9DC75A;
+    --line: rgba(243, 235, 221, 0.14);
+    --line-strong: rgba(243, 235, 221, 0.26);
+    --shadow: rgba(0, 0, 0, 0.45);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: rise 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 6rem;
+  }
+
+  /* ---- Masthead ---- */
+
+  .masthead {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.75rem;
+  }
+
+  .masthead img {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px var(--shadow), inset 0 0 0 1px var(--line-strong);
+    flex-shrink: 0;
+  }
+
+  .masthead-text h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin: 0 0 0.15rem;
+    letter-spacing: -0.01em;
+  }
+
+  .masthead-text p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
+    align-items: center;
+    margin-bottom: 3.25rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    background: color-mix(in srgb, var(--accent) 18%, var(--bg-raised));
+    border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+    padding: 0.32rem 0.7rem;
+    border-radius: 100px;
+  }
+
+  .badge .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .meta-plain {
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+  }
+
+  /* ---- Intro ---- */
+
+  .intro {
+    font-size: 1.12rem;
+    color: var(--ink);
+    max-width: 62ch;
+    margin-bottom: 3rem;
+  }
+
+  .intro strong { color: var(--ink); font-weight: 600; }
+
+  /* ---- Trail-rail sections ---- */
+
+  .trail {
+    position: relative;
+    padding-left: 2.1rem;
+  }
+
+  .trail::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 0.55rem;
+    bottom: 2.4rem;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--line-strong), var(--line) 92%, transparent);
+  }
+
+  section.entry {
+    position: relative;
+    padding-bottom: 2.6rem;
+  }
+
+  section.entry::before {
+    content: "";
+    position: absolute;
+    left: -2.1rem;
+    top: 0.5rem;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+  }
+
+  section.entry h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.28rem;
+    margin: 0 0 0.85rem;
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+  }
+
+  section.entry h3 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--ink-soft);
+    margin: 1.4rem 0 0.5rem;
+  }
+
+  section.entry p {
+    margin: 0 0 0.9rem;
+    max-width: 64ch;
+  }
+
+  section.entry p:last-child { margin-bottom: 0; }
+
+  section.entry ul {
+    margin: 0 0 0.9rem;
+    padding-left: 1.2rem;
+  }
+
+  section.entry li {
+    margin-bottom: 0.5rem;
+    max-width: 60ch;
+  }
+
+  section.entry li::marker {
+    color: var(--accent);
+  }
+
+  a {
+    color: var(--leaf);
+    text-decoration-color: color-mix(in srgb, var(--leaf) 45%, transparent);
+    text-underline-offset: 0.18em;
+  }
+
+  a:hover { text-decoration-thickness: 2px; }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  .callout {
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--leaf);
+    border-radius: 10px;
+    padding: 0.9rem 1.1rem;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin: 0.9rem 0;
+  }
+
+  .callout strong { color: var(--ink); }
+
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.87em;
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    padding: 0.1em 0.4em;
+    border-radius: 5px;
+    color: var(--accent-ink);
+  }
+
+  /* ---- Footer ---- */
+
+  footer {
+    margin-top: 1.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    font-size: 0.88rem;
+    color: var(--ink-faint);
+  }
+
+  footer a { color: var(--ink-soft); font-weight: 600; }
+
+  .back-to-top {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  @media (max-width: 480px) {
+    .page { padding: 3rem 1.25rem 4rem; }
+    .masthead img { width: 48px; height: 48px; }
+    .masthead-text h1 { font-size: 1.3rem; }
+    .trail { padding-left: 1.6rem; }
+    section.entry::before { left: -1.6rem; }
+  }
+
+  /* ---- Language switcher & language blocks ---- */
+
+  .lang-switch {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.4rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .lang-switch a {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--ink-soft);
+    text-decoration: none;
+    background: var(--bg-raised);
+    border: 1px solid var(--line-strong);
+    padding: 0.3rem 0.75rem;
+    border-radius: 100px;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .lang-switch a:hover {
+    border-color: var(--accent);
+    color: var(--accent-ink);
+  }
+
+  .lang-block { scroll-margin-top: 1.5rem; }
+
+  .lang-block + .lang-block {
+    margin-top: 1rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .lang-head { margin-bottom: 1.75rem; }
+
+  .lang-head h2 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.35rem;
+    margin: 0 0 0.3rem;
+    letter-spacing: -0.01em;
+  }
+
+  .lang-head p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+  }
+</style>
+
+</head>
+<body>
+<div class="page" id="top">
+
+  <nav class="lang-switch reveal" aria-label="Language / Dil / Langue / Idioma">
+    <a href="#en" hreflang="en" lang="en">English</a>
+    <a href="#tr" hreflang="tr" lang="tr">Türkçe</a>
+    <a href="#fr" hreflang="fr" lang="fr">Français</a>
+    <a href="#es" hreflang="es" lang="es">Español</a>
+  </nav>
+
+  <div class="masthead reveal">
+    <img src="/pagela/icon.png" alt="Pagela app icon" />
+    <div class="masthead-text">
+      <h1>Pagela</h1>
+      <p>Terms of Use</p>
+    </div>
+  </div>
+
+  <div class="meta-row reveal" style="animation-delay: 0.05s">
+    <span class="badge"><span class="dot"></span>Last updated 28 September 2026</span>
+    <span class="meta-plain">Published by Codifya</span>
+    <span class="meta-plain">·</span>
+    <span class="meta-plain"><a href="mailto:info@codifya.com" style="color:var(--ink-faint); text-decoration-color: var(--line-strong);">info@codifya.com</a></span>
+  </div>
+
+  <section class="lang-block" id="en" lang="en">
+
+    <p class="intro reveal" style="animation-delay: 0.1s">
+      These terms cover your use of Pagela, an iPad reader for EPUB and PDF
+      books published by Codifya. By downloading or using the app, you agree
+      to them. <strong>In short: the app is yours to use, the books are your
+      responsibility, and your notes and quotes stay yours.</strong>
+    </p>
+
+    <div class="trail">
+
+      <section class="entry reveal" id="en-the-app" style="animation-delay: 0.15s">
+        <h2>The app</h2>
+        <p>
+          Pagela is licensed to you for personal, non-commercial use on devices
+          you own or control, subject to Apple's
+          <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Licensed Application End User License Agreement</a>,
+          which applies unless these terms say otherwise. We may update the
+          app — new features, improvements or fixes — at any time.
+        </p>
+      </section>
+
+      <section class="entry reveal" id="en-your-books" style="animation-delay: 0.20s">
+        <h2>Your books</h2>
+        <p>
+          Pagela is a reader: it doesn't sell, supply or distribute books. You
+          are responsible for having the right to use every file you import
+          into the app.
+        </p>
+        <p>
+          Pagela opens DRM-free EPUB and PDF files only. It cannot open
+          DRM-protected books and does not remove or bypass copy protection.
+        </p>
+      </section>
+
+      <section class="entry reveal" id="en-your-data" style="animation-delay: 0.25s">
+        <h2>Your notes, quotes &amp; data</h2>
+        <p>
+          Your notes, quotes, Apple Pencil ink and reading statistics are yours.
+          They're stored on your device and, if you're signed in to iCloud,
+          synced through your own private iCloud database, which Apple provides
+          under its own terms. See our <a href="/pagela/privacy/">Privacy
+          Policy</a> for the details.
+        </p>
+      </section>
+
+      <section class="entry reveal" id="en-backups" style="animation-delay: 0.30s">
+        <h2>Backups &amp; data loss</h2>
+        <p>
+          We work hard to keep your library safe, but we can't guarantee that
+          data will never be lost — for example after a device problem, an
+          iCloud issue or deleting the app. iCloud sync doesn't include book
+          files, so please keep your own copies of your books and back up your
+          iPad regularly. To the extent permitted by law, Codifya isn't liable
+          for any loss of books, notes, quotes, ink or statistics.
+        </p>
+      </section>
+
+      <section class="entry reveal" id="en-acceptable-use" style="animation-delay: 0.35s">
+        <h2>Acceptable use</h2>
+        <p>
+          Use Pagela as intended: don't attempt to reverse-engineer, decompile
+          or extract assets from the app beyond what's permitted by applicable
+          law.
+        </p>
+      </section>
+
+      <section class="entry reveal" id="en-ownership" style="animation-delay: 0.40s">
+        <h2>Ownership</h2>
+        <p>
+          Pagela — its code, design and branding — belongs to Codifya. Nothing
+          here transfers ownership of the app to you; you're granted a licence
+          to use it, not a copy to redistribute or repurpose. Your books and
+          your own notes remain yours.
+        </p>
+      </section>
+
+      <section class="entry reveal" id="en-warranty" style="animation-delay: 0.45s">
+        <h2>No warranty, limited liability</h2>
+        <p>
+          Pagela is provided "as is." We work to keep it reliable and free of
+          bugs, but we don't guarantee it will always be error-free, available
+          without interruption, or able to open every EPUB or PDF file. To the
+          extent permitted by law, Codifya isn't liable for indirect or
+          incidental damages arising from your use of the app.
+        </p>
+      </section>
+
+      <section class="entry reveal" id="en-termination" style="animation-delay: 0.50s">
+        <h2>Termination</h2>
+        <p>
+          You can stop using Pagela at any time by deleting it, which removes
+          its locally stored data from your device. We may discontinue or
+          change the app at any time; where we reasonably can, we'll give
+          notice of significant changes in advance.
+        </p>
+      </section>
+
+      <section class="entry reveal" id="en-changes" style="animation-delay: 0.55s">
+        <h2>Changes to these terms</h2>
+        <p>
+          If we materially change these terms, we'll update this page and change
+          the date at the top. Continuing to use the app after a change means
+          you accept the updated terms.
+        </p>
+      </section>
+
+      <section class="entry reveal" id="en-governing-law" style="animation-delay: 0.60s">
+        <h2>Governing law</h2>
+        <p>
+          These terms are governed by the laws of the Republic of Türkiye,
+          without regard to conflict-of-law principles, except where local
+          consumer-protection law in your country grants you additional rights
+          that can't be waived.
+        </p>
+      </section>
+
+      <section class="entry reveal" id="en-contact" style="animation-delay: 0.65s">
+        <h2>Contact</h2>
+        <p>
+          Questions about these terms? Reach us at <a href="mailto:info@codifya.com">info@codifya.com</a>. See also our
+          <a href="/pagela/privacy/">Privacy Policy</a> and
+          <a href="/pagela/support/">Support</a> page.
+        </p>
+      </section>
+
+    </div>
+
+  </section>
+
+  <section class="lang-block" id="tr" lang="tr">
+
+    <div class="lang-head">
+      <h2>Kullanım Koşulları</h2>
+      <p>Son güncelleme: 28 Eylül 2026</p>
+    </div>
+
+    <p class="intro">
+      Bu koşullar, Codifya tarafından yayımlanan EPUB ve PDF okuyucusu Pagela'yı
+      kullanmanı kapsar. Uygulamayı indirerek ya da kullanarak bu koşulları
+      kabul etmiş olursun. <strong>Kısacası: uygulamayı kullanmak senin
+      hakkın, kitaplar senin sorumluluğunda, notların ve alıntıların da
+      sana ait.</strong>
+    </p>
+
+    <div class="trail">
+
+      <section class="entry" id="tr-the-app">
+        <h2>Uygulama</h2>
+        <p>
+          Pagela, sahip olduğun ya da kontrolündeki cihazlarda kişisel ve ticari
+          olmayan kullanım için sana lisanslanır. Bu koşullarda aksi
+          belirtilmedikçe Apple'ın
+          <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Lisanslı Uygulama Son Kullanıcı Lisans Sözleşmesi</a>
+          geçerlidir. Uygulamayı istediğimiz zaman güncelleyebiliriz (yeni
+          özellikler, iyileştirmeler ya da hata düzeltmeleri gibi).
+        </p>
+      </section>
+
+      <section class="entry" id="tr-your-books">
+        <h2>Kitapların</h2>
+        <p>
+          Pagela bir okuyucudur; kitap satmaz, sağlamaz ya da dağıtmaz.
+          Uygulamaya aktardığın her dosyayı kullanma hakkına sahip olmak senin
+          sorumluluğundadır.
+        </p>
+        <p>
+          Pagela yalnızca DRM'siz EPUB ve PDF dosyalarını açar. DRM korumalı
+          kitapları açamaz; kopya korumasını kaldırmaz ya da atlatmaz.
+        </p>
+      </section>
+
+      <section class="entry" id="tr-your-data">
+        <h2>Notların, alıntıların ve verilerin</h2>
+        <p>
+          Notların, alıntıların, Apple Pencil çizimlerin ve okuma istatistiklerin
+          sana aittir. Cihazında saklanırlar; iCloud'a giriş yapmışsan da Apple'ın
+          kendi koşullarıyla sunduğu özel iCloud veritabanın üzerinden
+          eşitlenirler. Ayrıntılar için <a href="/pagela/privacy/">Gizlilik
+          Politikası</a>'na göz at.
+        </p>
+      </section>
+
+      <section class="entry" id="tr-backups">
+        <h2>Yedekleme ve veri kaybı</h2>
+        <p>
+          Kitaplığını güvende tutmak için elimizden geleni yapıyoruz; ancak
+          verilerin hiçbir zaman kaybolmayacağını garanti edemeyiz. Örneğin
+          cihazda bir sorun çıktığında, iCloud'da bir aksaklık yaşandığında ya
+          da uygulamayı sildiğinde veriler kaybolabilir. iCloud eşitleme kitap
+          dosyalarını kapsamadığı için kitaplarının kendi kopyalarını sakla ve
+          iPad'ini düzenli olarak yedekle. Yasaların izin verdiği ölçüde Codifya,
+          kitapların, notların, alıntıların, çizimlerin ya da istatistiklerin
+          kaybından sorumlu değildir.
+        </p>
+      </section>
+
+      <section class="entry" id="tr-acceptable-use">
+        <h2>Kabul edilebilir kullanım</h2>
+        <p>
+          Pagela'yı amacına uygun kullan: yürürlükteki yasaların izin verdiği
+          durumlar dışında uygulamayı tersine mühendislikle çözmeye, kaynak koda
+          dönüştürmeye ya da içindeki varlıkları çıkarmaya çalışma.
+        </p>
+      </section>
+
+      <section class="entry" id="tr-ownership">
+        <h2>Mülkiyet</h2>
+        <p>
+          Pagela'nın kodu, tasarımı ve markası Codifya'ya aittir. Bu koşullar
+          uygulamanın mülkiyetini sana devretmez; sana uygulamayı kullanma
+          lisansı verilir, onu yeniden dağıtma ya da başka amaçlarla kullanma
+          hakkı verilmez. Kitapların ve notların sana ait olmaya devam eder.
+        </p>
+      </section>
+
+      <section class="entry" id="tr-warranty">
+        <h2>Garanti yoktur, sorumluluk sınırlıdır</h2>
+        <p>
+          Pagela "olduğu gibi" sunulur. Uygulamayı güvenilir ve hatasız tutmak
+          için çalışıyoruz; ancak her zaman hatasız olacağını, kesintisiz
+          çalışacağını ya da her EPUB veya PDF dosyasını açabileceğini garanti
+          etmiyoruz. Yasaların izin verdiği ölçüde Codifya, uygulamayı
+          kullanmandan doğan dolaylı ya da arızi zararlardan sorumlu değildir.
+        </p>
+      </section>
+
+      <section class="entry" id="tr-termination">
+        <h2>Sona erme</h2>
+        <p>
+          Pagela'yı silerek istediğin zaman kullanmayı bırakabilirsin; bu,
+          cihazında saklanan verilerini de kaldırır. Uygulamayı dilediğimiz
+          zaman değiştirebilir ya da sonlandırabiliriz; makul ölçüde mümkün
+          olduğunda önemli değişiklikleri önceden duyururuz.
+        </p>
+      </section>
+
+      <section class="entry" id="tr-changes">
+        <h2>Bu koşullardaki değişiklikler</h2>
+        <p>
+          Bu koşulları önemli ölçüde değiştirirsek bu sayfayı günceller ve en
+          üstteki tarihi değiştiririz. Bir değişiklikten sonra uygulamayı
+          kullanmaya devam etmen, güncellenmiş koşulları kabul ettiğin anlamına
+          gelir.
+        </p>
+      </section>
+
+      <section class="entry" id="tr-governing-law">
+        <h2>Uygulanacak hukuk</h2>
+        <p>
+          Bu koşullar, kanunlar ihtilafı kurallarına bakılmaksızın Türkiye
+          Cumhuriyeti kanunlarına tabidir. Ancak ülkendeki tüketiciyi koruma
+          mevzuatı sana vazgeçilemeyen ek haklar tanıyorsa bu haklar saklıdır.
+        </p>
+      </section>
+
+      <section class="entry" id="tr-contact">
+        <h2>İletişim</h2>
+        <p>
+          Bu koşullarla ilgili bir sorun mu var? Bize <a href="mailto:info@codifya.com">info@codifya.com</a> adresinden
+          ulaşabilirsin. <a href="/pagela/privacy/">Gizlilik Politikası</a> ve
+          <a href="/pagela/support/">Destek</a> sayfalarına da göz atabilirsin.
+        </p>
+      </section>
+
+    </div>
+
+  </section>
+
+  <section class="lang-block" id="fr" lang="fr">
+
+    <div class="lang-head">
+      <h2>Conditions d'utilisation</h2>
+      <p>Dernière mise à jour&nbsp;: 28&nbsp;septembre 2026</p>
+    </div>
+
+    <p class="intro">
+      Ces conditions encadrent votre utilisation de Pagela, une liseuse EPUB et
+      PDF pour iPad publiée par Codifya. En téléchargeant ou en utilisant
+      l'app, vous les acceptez. <strong>En bref&nbsp;: l'app est à votre
+      disposition, les livres relèvent de votre responsabilité, et vos notes
+      et citations vous appartiennent.</strong>
+    </p>
+
+    <div class="trail">
+
+      <section class="entry" id="fr-the-app">
+        <h2>L'app</h2>
+        <p>
+          Pagela vous est concédé sous licence pour un usage personnel et non
+          commercial, sur les appareils que vous possédez ou contrôlez,
+          conformément au <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Contrat de licence utilisateur final des applications sous licence</a>
+          d'Apple, qui s'applique sauf disposition contraire des présentes
+          conditions. Nous pouvons mettre à jour l'app à tout moment&nbsp;:
+          nouvelles fonctionnalités, améliorations ou corrections.
+        </p>
+      </section>
+
+      <section class="entry" id="fr-your-books">
+        <h2>Vos livres</h2>
+        <p>
+          Pagela est une liseuse&nbsp;: l'app ne vend, ne fournit et ne distribue
+          aucun livre. Il vous appartient de vous assurer que vous avez le droit
+          d'utiliser chaque fichier que vous importez.
+        </p>
+        <p>
+          Pagela n'ouvre que les fichiers EPUB et PDF sans DRM. L'app ne peut
+          pas ouvrir les livres protégés par DRM et ne supprime ni ne contourne
+          aucune protection contre la copie.
+        </p>
+      </section>
+
+      <section class="entry" id="fr-your-data">
+        <h2>Vos notes, citations et données</h2>
+        <p>
+          Vos notes, citations, tracés à l'Apple Pencil et statistiques de
+          lecture vous appartiennent. Ils sont stockés sur votre appareil et,
+          si vous êtes connecté à iCloud, synchronisés via votre propre base de
+          données iCloud privée, fournie par Apple selon ses propres conditions.
+          Pour en savoir plus, consultez notre
+          <a href="/pagela/privacy/">Politique de confidentialité</a>.
+        </p>
+      </section>
+
+      <section class="entry" id="fr-backups">
+        <h2>Sauvegardes et perte de données</h2>
+        <p>
+          Nous faisons tout pour protéger votre bibliothèque, mais nous ne
+          pouvons pas garantir qu'aucune donnée ne sera jamais perdue, par
+          exemple après un problème d'appareil, un incident iCloud ou la
+          suppression de l'app. La synchronisation iCloud n'inclut pas les
+          fichiers des livres&nbsp;: conservez donc vos propres copies de vos
+          livres et sauvegardez régulièrement votre iPad. Dans les limites
+          permises par la loi, Codifya n'est pas responsable de la perte de
+          livres, de notes, de citations, de tracés ou de statistiques.
+        </p>
+      </section>
+
+      <section class="entry" id="fr-acceptable-use">
+        <h2>Utilisation acceptable</h2>
+        <p>
+          Utilisez Pagela comme prévu&nbsp;: n'essayez pas de désassembler, de
+          décompiler ou d'extraire des ressources de l'app au-delà de ce que
+          permet la loi applicable.
+        </p>
+      </section>
+
+      <section class="entry" id="fr-ownership">
+        <h2>Propriété</h2>
+        <p>
+          Pagela — son code, son design et sa marque — appartient à Codifya. Ces
+          conditions ne vous transfèrent pas la propriété de l'app&nbsp;: vous
+          recevez une licence d'utilisation, et non une copie à redistribuer ou
+          à réutiliser. Vos livres et vos notes restent les vôtres.
+        </p>
+      </section>
+
+      <section class="entry" id="fr-warranty">
+        <h2>Absence de garantie, responsabilité limitée</h2>
+        <p>
+          Pagela est fourni «&nbsp;en l'état&nbsp;». Nous nous efforçons de le
+          rendre fiable et sans bug, mais nous ne garantissons pas qu'il sera
+          toujours exempt d'erreurs, disponible sans interruption ni capable
+          d'ouvrir tous les fichiers EPUB ou PDF. Dans les limites permises par
+          la loi, Codifya n'est pas responsable des dommages indirects ou
+          accessoires liés à votre utilisation de l'app.
+        </p>
+      </section>
+
+      <section class="entry" id="fr-termination">
+        <h2>Résiliation</h2>
+        <p>
+          Vous pouvez cesser d'utiliser Pagela à tout moment en le supprimant,
+          ce qui efface ses données stockées localement sur votre appareil.
+          Nous pouvons modifier ou arrêter l'app à tout moment&nbsp;; lorsque
+          c'est raisonnablement possible, nous annoncerons à l'avance les
+          changements importants.
+        </p>
+      </section>
+
+      <section class="entry" id="fr-changes">
+        <h2>Modifications de ces conditions</h2>
+        <p>
+          Si nous modifions ces conditions de manière importante, nous mettrons
+          cette page à jour et changerons la date indiquée en haut. Continuer à
+          utiliser l'app après une modification vaut acceptation des conditions
+          mises à jour.
+        </p>
+      </section>
+
+      <section class="entry" id="fr-governing-law">
+        <h2>Droit applicable</h2>
+        <p>
+          Ces conditions sont régies par le droit de la République de Türkiye,
+          sans égard aux règles de conflit de lois, sauf lorsque le droit de la
+          consommation de votre pays vous accorde des droits supplémentaires
+          auxquels il ne peut être renoncé.
+        </p>
+      </section>
+
+      <section class="entry" id="fr-contact">
+        <h2>Contact</h2>
+        <p>
+          Une question sur ces conditions&nbsp;? Écrivez-nous à <a href="mailto:info@codifya.com">info@codifya.com</a>.
+          Consultez aussi notre <a href="/pagela/privacy/">Politique de
+          confidentialité</a> et la page <a href="/pagela/support/">Assistance</a>.
+        </p>
+      </section>
+
+    </div>
+
+  </section>
+
+  <section class="lang-block" id="es" lang="es">
+
+    <div class="lang-head">
+      <h2>Términos de uso</h2>
+      <p>Última actualización: 28 de septiembre de 2026</p>
+    </div>
+
+    <p class="intro">
+      Estos términos regulan el uso de Pagela, un lector de libros EPUB y PDF
+      para iPad publicado por Codifya. Al descargar o usar la app, los
+      aceptas. <strong>En resumen: la app es para que la uses, los libros son
+      responsabilidad tuya y tus notas y citas siguen siendo tuyas.</strong>
+    </p>
+
+    <div class="trail">
+
+      <section class="entry" id="es-the-app">
+        <h2>La app</h2>
+        <p>
+          Pagela se te concede bajo licencia para uso personal y no comercial en
+          los dispositivos que te pertenecen o que controlas, conforme al
+          <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Contrato de licencia de usuario final de aplicaciones con licencia</a>
+          de Apple, que se aplica salvo que estos términos indiquen lo
+          contrario. Podemos actualizar la app en cualquier momento con nuevas
+          funciones, mejoras o correcciones.
+        </p>
+      </section>
+
+      <section class="entry" id="es-your-books">
+        <h2>Tus libros</h2>
+        <p>
+          Pagela es un lector: no vende, suministra ni distribuye libros. Eres
+          responsable de tener derecho a usar cada archivo que importas en la
+          app.
+        </p>
+        <p>
+          Pagela solo abre archivos EPUB y PDF sin DRM. No puede abrir libros
+          protegidos con DRM y no elimina ni elude ninguna protección anticopia.
+        </p>
+      </section>
+
+      <section class="entry" id="es-your-data">
+        <h2>Tus notas, citas y datos</h2>
+        <p>
+          Tus notas, citas, trazos con el Apple Pencil y estadísticas de lectura
+          son tuyos. Se guardan en tu dispositivo y, si has iniciado sesión en
+          iCloud, se sincronizan a través de tu propia base de datos privada de
+          iCloud, que Apple ofrece según sus propios términos. Consulta nuestra
+          <a href="/pagela/privacy/">Política de privacidad</a> para más
+          detalles.
+        </p>
+      </section>
+
+      <section class="entry" id="es-backups">
+        <h2>Copias de seguridad y pérdida de datos</h2>
+        <p>
+          Hacemos todo lo posible por mantener tu biblioteca a salvo, pero no
+          podemos garantizar que nunca se pierdan datos, por ejemplo tras un
+          problema en el dispositivo, una incidencia de iCloud o al eliminar la
+          app. La sincronización con iCloud no incluye los archivos de los
+          libros, así que guarda tus propias copias de tus libros y haz copias
+          de seguridad de tu iPad con regularidad. En la medida en que lo
+          permita la ley, Codifya no se hace responsable de la pérdida de
+          libros, notas, citas, trazos o estadísticas.
+        </p>
+      </section>
+
+      <section class="entry" id="es-acceptable-use">
+        <h2>Uso aceptable</h2>
+        <p>
+          Usa Pagela para lo que está pensada: no intentes aplicar ingeniería
+          inversa, descompilar ni extraer recursos de la app más allá de lo que
+          permita la ley aplicable.
+        </p>
+      </section>
+
+      <section class="entry" id="es-ownership">
+        <h2>Propiedad</h2>
+        <p>
+          Pagela —su código, su diseño y su marca— pertenece a Codifya. Estos
+          términos no te transfieren la propiedad de la app: recibes una
+          licencia para usarla, no una copia para redistribuirla o
+          reutilizarla. Tus libros y tus notas siguen siendo tuyos.
+        </p>
+      </section>
+
+      <section class="entry" id="es-warranty">
+        <h2>Sin garantía, responsabilidad limitada</h2>
+        <p>
+          Pagela se ofrece «tal cual». Trabajamos para que sea fiable y no tenga
+          errores, pero no garantizamos que funcione siempre sin fallos, sin
+          interrupciones ni que pueda abrir cualquier archivo EPUB o PDF. En la
+          medida en que lo permita la ley, Codifya no se hace responsable de
+          los daños indirectos o incidentales derivados del uso de la app.
+        </p>
+      </section>
+
+      <section class="entry" id="es-termination">
+        <h2>Terminación</h2>
+        <p>
+          Puedes dejar de usar Pagela en cualquier momento eliminándola, lo que
+          borra los datos guardados localmente en tu dispositivo. Podemos
+          modificar o retirar la app en cualquier momento; cuando sea
+          razonablemente posible, avisaremos con antelación de los cambios
+          importantes.
+        </p>
+      </section>
+
+      <section class="entry" id="es-changes">
+        <h2>Cambios en estos términos</h2>
+        <p>
+          Si modificamos estos términos de forma importante, actualizaremos esta
+          página y cambiaremos la fecha que aparece arriba. Si sigues usando la
+          app después de un cambio, aceptas los términos actualizados.
+        </p>
+      </section>
+
+      <section class="entry" id="es-governing-law">
+        <h2>Legislación aplicable</h2>
+        <p>
+          Estos términos se rigen por las leyes de la República de Türkiye, sin
+          tener en cuenta sus normas sobre conflictos de leyes, salvo cuando la
+          legislación de protección del consumidor de tu país te conceda
+          derechos adicionales irrenunciables.
+        </p>
+      </section>
+
+      <section class="entry" id="es-contact">
+        <h2>Contacto</h2>
+        <p>
+          ¿Tienes preguntas sobre estos términos? Escríbenos a <a href="mailto:info@codifya.com">info@codifya.com</a>.
+          Consulta también nuestra <a href="/pagela/privacy/">Política de
+          privacidad</a> y la página de <a href="/pagela/support/">Asistencia</a>.
+        </p>
+      </section>
+
+    </div>
+
+  </section>
+
+  <footer class="reveal" style="animation-delay: 0.70s">
+    <span>© 2026 Codifya. Pagela.</span>
+    <a class="back-to-top" href="#top">Back to top ↑</a>
+  </footer>
+
+</div>
+
+</body>
+</html>

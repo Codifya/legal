@@ -1,0 +1,931 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<meta name="description" content="How Pagela (by Codifya) handles your data: no data collected, no account, no ads, no analytics, everything on your iPad and optional sync through your own private iCloud.">
+<title>Pagela Privacy Policy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Literata:ital,opsz,wght@0,18..144,400;0,18..144,500;0,18..144,600;1,18..144,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #F6F0E3;
+    --bg-raised: #FFFDF8;
+    --ink: #26211C;
+    --ink-soft: #5C4F42;
+    --ink-faint: #9C8E7C;
+    --accent: #8B5E2A;
+    --accent-ink: #4A3218;
+    --leaf: #426B26;
+    --line: rgba(38, 33, 28, 0.12);
+    --line-strong: rgba(38, 33, 28, 0.24);
+    --shadow: rgba(38, 33, 28, 0.10);
+    --font-display: "Manrope", ui-rounded, "SF Pro Rounded", system-ui, sans-serif;
+    --font-body: "Literata", Georgia, "Times New Roman", serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #16120E;
+      --bg-raised: #211B15;
+      --ink: #F3EBDD;
+      --ink-soft: #CDBFA9;
+      --ink-faint: #8E806C;
+      --accent: #E0A45A;
+      --accent-ink: #FFF3E2;
+      --leaf: #9DC75A;
+      --line: rgba(243, 235, 221, 0.14);
+      --line-strong: rgba(243, 235, 221, 0.26);
+      --shadow: rgba(0, 0, 0, 0.45);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #16120E;
+    --bg-raised: #211B15;
+    --ink: #F3EBDD;
+    --ink-soft: #CDBFA9;
+    --ink-faint: #8E806C;
+    --accent: #E0A45A;
+    --accent-ink: #FFF3E2;
+    --leaf: #9DC75A;
+    --line: rgba(243, 235, 221, 0.14);
+    --line-strong: rgba(243, 235, 221, 0.26);
+    --shadow: rgba(0, 0, 0, 0.45);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: rise 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 6rem;
+  }
+
+  /* ---- Masthead ---- */
+
+  .masthead {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.75rem;
+  }
+
+  .masthead img {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px var(--shadow), inset 0 0 0 1px var(--line-strong);
+    flex-shrink: 0;
+  }
+
+  .masthead-text h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin: 0 0 0.15rem;
+    letter-spacing: -0.01em;
+  }
+
+  .masthead-text p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
+    align-items: center;
+    margin-bottom: 3.25rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    background: color-mix(in srgb, var(--accent) 18%, var(--bg-raised));
+    border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+    padding: 0.32rem 0.7rem;
+    border-radius: 100px;
+  }
+
+  .badge .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .meta-plain {
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+  }
+
+  /* ---- Intro ---- */
+
+  .intro {
+    font-size: 1.12rem;
+    color: var(--ink);
+    max-width: 62ch;
+    margin-bottom: 3rem;
+  }
+
+  .intro strong { color: var(--ink); font-weight: 600; }
+
+  /* ---- Trail-rail sections ---- */
+
+  .trail {
+    position: relative;
+    padding-left: 2.1rem;
+  }
+
+  .trail::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 0.55rem;
+    bottom: 2.4rem;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--line-strong), var(--line) 92%, transparent);
+  }
+
+  section.entry {
+    position: relative;
+    padding-bottom: 2.6rem;
+  }
+
+  section.entry::before {
+    content: "";
+    position: absolute;
+    left: -2.1rem;
+    top: 0.5rem;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+  }
+
+  section.entry h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.28rem;
+    margin: 0 0 0.85rem;
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+  }
+
+  section.entry h3 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--ink-soft);
+    margin: 1.4rem 0 0.5rem;
+  }
+
+  section.entry p {
+    margin: 0 0 0.9rem;
+    max-width: 64ch;
+  }
+
+  section.entry p:last-child { margin-bottom: 0; }
+
+  section.entry ul {
+    margin: 0 0 0.9rem;
+    padding-left: 1.2rem;
+  }
+
+  section.entry li {
+    margin-bottom: 0.5rem;
+    max-width: 60ch;
+  }
+
+  section.entry li::marker {
+    color: var(--accent);
+  }
+
+  a {
+    color: var(--leaf);
+    text-decoration-color: color-mix(in srgb, var(--leaf) 45%, transparent);
+    text-underline-offset: 0.18em;
+  }
+
+  a:hover { text-decoration-thickness: 2px; }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  .callout {
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--leaf);
+    border-radius: 10px;
+    padding: 0.9rem 1.1rem;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin: 0.9rem 0;
+  }
+
+  .callout strong { color: var(--ink); }
+
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.87em;
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    padding: 0.1em 0.4em;
+    border-radius: 5px;
+    color: var(--accent-ink);
+  }
+
+  /* ---- Footer ---- */
+
+  footer {
+    margin-top: 1.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    font-size: 0.88rem;
+    color: var(--ink-faint);
+  }
+
+  footer a { color: var(--ink-soft); font-weight: 600; }
+
+  .back-to-top {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  @media (max-width: 480px) {
+    .page { padding: 3rem 1.25rem 4rem; }
+    .masthead img { width: 48px; height: 48px; }
+    .masthead-text h1 { font-size: 1.3rem; }
+    .trail { padding-left: 1.6rem; }
+    section.entry::before { left: -1.6rem; }
+  }
+
+  /* ---- Language switcher & language blocks ---- */
+
+  .lang-switch {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.4rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .lang-switch a {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--ink-soft);
+    text-decoration: none;
+    background: var(--bg-raised);
+    border: 1px solid var(--line-strong);
+    padding: 0.3rem 0.75rem;
+    border-radius: 100px;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .lang-switch a:hover {
+    border-color: var(--accent);
+    color: var(--accent-ink);
+  }
+
+  .lang-block { scroll-margin-top: 1.5rem; }
+
+  .lang-block + .lang-block {
+    margin-top: 1rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .lang-head { margin-bottom: 1.75rem; }
+
+  .lang-head h2 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.35rem;
+    margin: 0 0 0.3rem;
+    letter-spacing: -0.01em;
+  }
+
+  .lang-head p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+  }
+</style>
+
+</head>
+<body>
+<div class="page" id="top">
+
+  <nav class="lang-switch reveal" aria-label="Language / Dil / Langue / Idioma">
+    <a href="#en" hreflang="en" lang="en">English</a>
+    <a href="#tr" hreflang="tr" lang="tr">Türkçe</a>
+    <a href="#fr" hreflang="fr" lang="fr">Français</a>
+    <a href="#es" hreflang="es" lang="es">Español</a>
+  </nav>
+
+  <div class="masthead reveal">
+    <img src="/pagela/icon.png" alt="Pagela app icon" />
+    <div class="masthead-text">
+      <h1>Pagela</h1>
+      <p>Privacy Policy</p>
+    </div>
+  </div>
+
+  <div class="meta-row reveal" style="animation-delay: 0.05s">
+    <span class="badge"><span class="dot"></span>Last updated 28 September 2026</span>
+    <span class="meta-plain">Published by Codifya</span>
+    <span class="meta-plain">·</span>
+    <span class="meta-plain"><a href="mailto:info@codifya.com" style="color:var(--ink-faint); text-decoration-color: var(--line-strong);">info@codifya.com</a></span>
+  </div>
+
+  <section class="lang-block" id="en" lang="en">
+
+    <p class="intro reveal" style="animation-delay: 0.1s">
+      Pagela is a calm iPad reader for your own EPUB and PDF books. This page
+      explains, in plain language, what the app does and doesn't do with your
+      information — <strong>short version: Codifya collects no personal data at
+      all. There's no account, no ads, no analytics and no tracking, and your
+      reading stays on your iPad and in your own private iCloud.</strong>
+    </p>
+
+    <div class="trail">
+
+      <section class="entry reveal" id="en-what-the-app-stores" style="animation-delay: 0.15s">
+        <h2>What the app stores</h2>
+        <p>
+          Pagela keeps the following on your device: the books you add, your
+          sticky notes, your quotes (an image of each passage you mark together
+          with its text), your Apple Pencil ink, your reading positions and your
+          reading statistics. There is no Codifya server for any of this to
+          travel to, and you never need an account to use the app.
+        </p>
+        <div class="callout">
+          <strong>Data Not Collected.</strong> That's Pagela's privacy label on
+          the App Store. We don't collect your name, email address, contacts,
+          location, or anything you read or write in the app.
+        </div>
+      </section>
+
+      <section class="entry reveal" id="en-icloud" style="animation-delay: 0.20s">
+        <h2>iCloud sync</h2>
+        <p>
+          iCloud sync is optional: it only works when you're signed in to
+          iCloud on your iPad. When you are, Pagela syncs your notes, quotes,
+          ink, reading positions and statistics through your own
+          <strong>private</strong> iCloud database (Apple CloudKit), so they
+          appear on your other iPads. That database belongs to your Apple
+          Account; Codifya cannot see or access it. Apple stores it under its
+          own <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">privacy policy</a>.
+        </p>
+        <p>
+          The book files themselves are <strong>not</strong> synced. To read a
+          book on another iPad, add the same file there as well. If you're not
+          signed in to iCloud, everything simply stays on the device.
+        </p>
+      </section>
+
+      <section class="entry reveal" id="en-books" style="animation-delay: 0.25s">
+        <h2>Your books</h2>
+        <p>
+          Pagela opens the DRM-free EPUB and PDF files you choose to add. It
+          cannot open DRM-protected books. Your books are stored on your device
+          and are never uploaded to Codifya.
+        </p>
+        <p>
+          Book content is blocked from loading anything from the internet, so a
+          book can't contact a remote server while you read it.
+        </p>
+      </section>
+
+      <section class="entry reveal" id="en-statistics" style="animation-delay: 0.30s">
+        <h2>Reading statistics</h2>
+        <p>
+          Reading statistics are computed on your iPad and count only the time
+          you spend actively reading. They're never sent to Codifya. You can
+          turn <strong>Reading Tracking</strong> off, or delete all statistics,
+          at any time in Pagela's Settings.
+        </p>
+      </section>
+
+      <section class="entry reveal" id="en-no-tracking" style="animation-delay: 0.35s">
+        <h2>No ads, analytics or tracking</h2>
+        <p>
+          Pagela contains no advertising, no analytics and no third-party SDKs.
+          It doesn't track you across other companies' apps or websites.
+        </p>
+      </section>
+
+      <section class="entry reveal" id="en-children" style="animation-delay: 0.40s">
+        <h2>Children's privacy</h2>
+        <p>
+          Pagela is not directed at children. It collects no personal data from
+          anyone, of any age.
+        </p>
+      </section>
+
+      <section class="entry reveal" id="en-your-data" style="animation-delay: 0.45s">
+        <h2>Managing &amp; deleting your data</h2>
+        <ul>
+          <li><strong>Notes, quotes and statistics:</strong> delete individual notes
+            and quotes in the app, and delete all reading statistics from
+            Pagela's Settings.</li>
+          <li><strong>Everything on this iPad:</strong> deleting the app removes all
+            of its locally stored data.</li>
+          <li><strong>iCloud:</strong> to remove Pagela's synced data, go to
+            <code>Settings → [your name] → iCloud → Manage Storage</code> on
+            your device.</li>
+        </ul>
+        <p>
+          Because Codifya holds no copy of your data, there's nothing on our
+          end to access, export or delete on your behalf — the controls above
+          are the complete picture.
+        </p>
+      </section>
+
+      <section class="entry reveal" id="en-changes" style="animation-delay: 0.50s">
+        <h2>Changes to this policy</h2>
+        <p>
+          If the way Pagela handles data ever changes, we'll post the update on
+          this page and change the date at the top.
+        </p>
+      </section>
+
+      <section class="entry reveal" id="en-contact" style="animation-delay: 0.55s">
+        <h2>Contact</h2>
+        <p>
+          Questions about this policy? Reach us at <a href="mailto:info@codifya.com">info@codifya.com</a>. See also our
+          <a href="/pagela/terms/">Terms of Use</a> and
+          <a href="/pagela/support/">Support</a> page.
+        </p>
+      </section>
+
+    </div>
+
+  </section>
+
+  <section class="lang-block" id="tr" lang="tr">
+
+    <div class="lang-head">
+      <h2>Gizlilik Politikası</h2>
+      <p>Son güncelleme: 28 Eylül 2026</p>
+    </div>
+
+    <p class="intro">
+      Pagela, kendi EPUB ve PDF kitaplarını okuman için tasarlanmış sakin bir
+      iPad okuyucusu. Bu sayfada uygulamanın bilgilerinle ne yapıp ne
+      yapmadığını sade bir dille anlatıyoruz — <strong>kısacası: Codifya
+      hiçbir kişisel veri toplamaz. Hesap, reklam, analitik ya da izleme yok;
+      okuduğun her şey iPad'inde ve kendi özel iCloud alanında kalır.</strong>
+    </p>
+
+    <div class="trail">
+
+      <section class="entry" id="tr-what-the-app-stores">
+        <h2>Uygulama neleri saklar?</h2>
+        <p>
+          Pagela şunları cihazında saklar: eklediğin kitaplar, yapışkan
+          notların, alıntıların (işaretlediğin her bölümün görüntüsü ve metni),
+          Apple Pencil çizimlerin, okuma konumların ve okuma istatistiklerin.
+          Bunların gönderileceği bir Codifya sunucusu yok; uygulamayı kullanmak
+          için hiçbir zaman hesap açman gerekmez.
+        </p>
+        <div class="callout">
+          <strong>Veri Toplanmıyor.</strong> Pagela'nın App Store'daki gizlilik
+          etiketi bu. Adını, e-posta adresini, kişilerini, konumunu ya da
+          uygulamada okuduğun veya yazdığın hiçbir şeyi toplamayız.
+        </div>
+      </section>
+
+      <section class="entry" id="tr-icloud">
+        <h2>iCloud eşitleme</h2>
+        <p>
+          iCloud eşitleme isteğe bağlıdır ve yalnızca iPad'inde iCloud'a giriş
+          yapmışsan çalışır. Giriş yapmışsan Pagela notlarını, alıntılarını,
+          çizimlerini, okuma konumlarını ve istatistiklerini kendi
+          <strong>özel</strong> iCloud veritabanın (Apple CloudKit) üzerinden
+          eşitler; böylece diğer iPad'lerinde de görünürler. Bu veritabanı senin
+          Apple Hesabına aittir; Codifya onu göremez ve ona erişemez. Apple bu
+          verileri kendi <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">gizlilik politikası</a>
+          kapsamında saklar.
+        </p>
+        <p>
+          Kitap dosyalarının kendisi <strong>eşitlenmez</strong>. Bir kitabı başka
+          bir iPad'de okumak istersen aynı dosyayı oraya da eklemen gerekir.
+          iCloud'a giriş yapmamışsan her şey yalnızca bu cihazda kalır.
+        </p>
+      </section>
+
+      <section class="entry" id="tr-books">
+        <h2>Kitapların</h2>
+        <p>
+          Pagela, eklemeyi seçtiğin DRM'siz EPUB ve PDF dosyalarını açar. DRM
+          korumalı kitapları açamaz. Kitapların cihazında saklanır ve hiçbir
+          zaman Codifya'ya yüklenmez.
+        </p>
+        <p>
+          Kitap içeriğinin internetten herhangi bir şey yüklemesi engellenir;
+          yani okurken bir kitap uzaktaki bir sunucuyla bağlantı kuramaz.
+        </p>
+      </section>
+
+      <section class="entry" id="tr-statistics">
+        <h2>Okuma istatistikleri</h2>
+        <p>
+          Okuma istatistiklerin iPad'inde hesaplanır ve yalnızca gerçekten
+          okuduğun süreyi sayar. Codifya'ya asla gönderilmez. Pagela'nın
+          Ayarlar ekranından <strong>Okuma Takibi</strong>'ni istediğin zaman
+          kapatabilir ya da tüm istatistikleri silebilirsin.
+        </p>
+      </section>
+
+      <section class="entry" id="tr-no-tracking">
+        <h2>Reklam, analitik ve izleme yok</h2>
+        <p>
+          Pagela'da reklam, analitik ya da üçüncü taraf SDK yoktur. Seni başka
+          şirketlerin uygulamalarında veya web sitelerinde izlemez.
+        </p>
+      </section>
+
+      <section class="entry" id="tr-children">
+        <h2>Çocukların gizliliği</h2>
+        <p>
+          Pagela çocuklara yönelik bir uygulama değildir. Yaşı ne olursa olsun
+          hiç kimseden kişisel veri toplamaz.
+        </p>
+      </section>
+
+      <section class="entry" id="tr-your-data">
+        <h2>Verilerini yönetmek ve silmek</h2>
+        <ul>
+          <li><strong>Notlar, alıntılar ve istatistikler:</strong> notları ve
+            alıntıları uygulama içinde tek tek silebilir, tüm okuma
+            istatistiklerini Pagela'nın Ayarlar ekranından temizleyebilirsin.</li>
+          <li><strong>Bu iPad'deki her şey:</strong> uygulamayı sildiğinde
+            cihazda saklanan tüm verileri de silinir.</li>
+          <li><strong>iCloud:</strong> Pagela'nın eşitlenmiş verilerini kaldırmak
+            için cihazında <code>Ayarlar → [adın] → iCloud → Depolama Alanını
+            Yönet</code> yolunu izle.</li>
+        </ul>
+        <p>
+          Codifya'da verilerinin bir kopyası bulunmadığından, senin adına
+          erişebileceğimiz, dışa aktarabileceğimiz ya da silebileceğimiz bir şey
+          yok — yukarıdaki seçenekler resmin tamamıdır.
+        </p>
+      </section>
+
+      <section class="entry" id="tr-changes">
+        <h2>Bu politikadaki değişiklikler</h2>
+        <p>
+          Pagela'nın verileri işleme biçimi değişirse güncellemeyi bu sayfada
+          yayımlar ve en üstteki tarihi değiştiririz.
+        </p>
+      </section>
+
+      <section class="entry" id="tr-contact">
+        <h2>İletişim</h2>
+        <p>
+          Bu politikayla ilgili bir sorun mu var? Bize <a href="mailto:info@codifya.com">info@codifya.com</a> adresinden
+          ulaşabilirsin. <a href="/pagela/terms/">Kullanım Koşulları</a> ve
+          <a href="/pagela/support/">Destek</a> sayfalarına da göz atabilirsin.
+        </p>
+      </section>
+
+    </div>
+
+  </section>
+
+  <section class="lang-block" id="fr" lang="fr">
+
+    <div class="lang-head">
+      <h2>Politique de confidentialité</h2>
+      <p>Dernière mise à jour&nbsp;: 28&nbsp;septembre 2026</p>
+    </div>
+
+    <p class="intro">
+      Pagela est une liseuse paisible pour iPad, conçue pour vos propres livres
+      EPUB et PDF. Cette page explique simplement ce que l'app fait, et ne fait
+      pas, de vos informations — <strong>en bref&nbsp;: Codifya ne collecte
+      aucune donnée personnelle. Pas de compte, pas de publicité, pas
+      d'analyse d'usage ni de pistage&nbsp;; vos lectures restent sur votre
+      iPad et dans votre propre espace iCloud privé.</strong>
+    </p>
+
+    <div class="trail">
+
+      <section class="entry" id="fr-what-the-app-stores">
+        <h2>Ce que l'app conserve</h2>
+        <p>
+          Pagela conserve sur votre appareil&nbsp;: les livres que vous ajoutez,
+          vos notes, vos citations (une image de chaque passage marqué,
+          accompagnée de son texte), vos tracés à l'Apple Pencil, vos positions
+          de lecture et vos statistiques de lecture. Aucun serveur Codifya ne
+          reçoit ces données, et vous n'avez jamais besoin de créer un compte.
+        </p>
+        <div class="callout">
+          <strong>Aucune donnée collectée.</strong> C'est l'étiquette de
+          confidentialité de Pagela sur l'App Store. Nous ne collectons ni votre
+          nom, ni votre adresse e-mail, ni vos contacts, ni votre position, ni
+          rien de ce que vous lisez ou écrivez dans l'app.
+        </div>
+      </section>
+
+      <section class="entry" id="fr-icloud">
+        <h2>Synchronisation iCloud</h2>
+        <p>
+          La synchronisation iCloud est facultative&nbsp;: elle ne fonctionne que
+          si vous êtes connecté à iCloud sur votre iPad. Dans ce cas, Pagela
+          synchronise vos notes, citations, tracés, positions de lecture et
+          statistiques via votre propre base de données iCloud
+          <strong>privée</strong> (Apple CloudKit), afin de les retrouver sur vos
+          autres iPad. Cette base appartient à votre compte Apple&nbsp;: Codifya
+          ne peut ni la consulter ni y accéder. Apple la conserve conformément à
+          sa propre <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">politique de confidentialité</a>.
+        </p>
+        <p>
+          Les fichiers des livres, eux, ne sont <strong>pas</strong>
+          synchronisés. Pour lire un livre sur un autre iPad, ajoutez-y aussi le
+          même fichier. Si vous n'êtes pas connecté à iCloud, tout reste
+          simplement sur l'appareil.
+        </p>
+      </section>
+
+      <section class="entry" id="fr-books">
+        <h2>Vos livres</h2>
+        <p>
+          Pagela ouvre les fichiers EPUB et PDF sans DRM que vous choisissez
+          d'ajouter. Il ne peut pas ouvrir les livres protégés par DRM. Vos
+          livres sont stockés sur votre appareil et ne sont jamais envoyés à
+          Codifya.
+        </p>
+        <p>
+          Le contenu des livres ne peut rien charger depuis Internet&nbsp;: un
+          livre ne peut donc contacter aucun serveur distant pendant votre
+          lecture.
+        </p>
+      </section>
+
+      <section class="entry" id="fr-statistics">
+        <h2>Statistiques de lecture</h2>
+        <p>
+          Les statistiques de lecture sont calculées sur votre iPad et ne
+          comptent que le temps de lecture active. Elles ne sont jamais envoyées
+          à Codifya. Vous pouvez désactiver le <strong>Suivi de lecture</strong>
+          ou supprimer toutes vos statistiques à tout moment dans les Réglages
+          de Pagela.
+        </p>
+      </section>
+
+      <section class="entry" id="fr-no-tracking">
+        <h2>Ni publicité, ni analyse, ni pistage</h2>
+        <p>
+          Pagela ne contient ni publicité, ni outil d'analyse d'usage, ni SDK
+          tiers. L'app ne vous suit pas à travers les apps ou les sites web
+          d'autres entreprises.
+        </p>
+      </section>
+
+      <section class="entry" id="fr-children">
+        <h2>Protection des enfants</h2>
+        <p>
+          Pagela ne s'adresse pas aux enfants. L'app ne collecte aucune donnée
+          personnelle, auprès de qui que ce soit et quel que soit son âge.
+        </p>
+      </section>
+
+      <section class="entry" id="fr-your-data">
+        <h2>Gérer et supprimer vos données</h2>
+        <ul>
+          <li><strong>Notes, citations et statistiques&nbsp;:</strong> supprimez
+            une note ou une citation directement dans l'app, et effacez toutes
+            les statistiques de lecture depuis les Réglages de Pagela.</li>
+          <li><strong>Tout ce qui se trouve sur cet iPad&nbsp;:</strong> supprimer
+            l'app efface toutes les données stockées localement.</li>
+          <li><strong>iCloud&nbsp;:</strong> pour supprimer les données
+            synchronisées de Pagela, ouvrez <code>Réglages → [votre nom] →
+            iCloud → Gérer le stockage</code> sur votre appareil.</li>
+        </ul>
+        <p>
+          Comme Codifya ne détient aucune copie de vos données, nous n'avons
+          rien à consulter, exporter ou supprimer à votre place — les options
+          ci-dessus sont les seules qui existent.
+        </p>
+      </section>
+
+      <section class="entry" id="fr-changes">
+        <h2>Modifications de cette politique</h2>
+        <p>
+          Si la façon dont Pagela traite les données change, nous publierons la
+          mise à jour sur cette page et modifierons la date indiquée en haut.
+        </p>
+      </section>
+
+      <section class="entry" id="fr-contact">
+        <h2>Contact</h2>
+        <p>
+          Une question sur cette politique&nbsp;? Écrivez-nous à <a href="mailto:info@codifya.com">info@codifya.com</a>.
+          Consultez aussi nos <a href="/pagela/terms/">Conditions
+          d'utilisation</a> et la page <a href="/pagela/support/">Assistance</a>.
+        </p>
+      </section>
+
+    </div>
+
+  </section>
+
+  <section class="lang-block" id="es" lang="es">
+
+    <div class="lang-head">
+      <h2>Política de privacidad</h2>
+      <p>Última actualización: 28 de septiembre de 2026</p>
+    </div>
+
+    <p class="intro">
+      Pagela es un lector tranquilo para iPad pensado para tus propios libros
+      EPUB y PDF. En esta página te explicamos, con palabras sencillas, qué
+      hace la app con tu información y qué no hace — <strong>en resumen:
+      Codifya no recopila ningún dato personal. No hay cuenta, ni anuncios, ni
+      analíticas, ni rastreo; tus lecturas se quedan en tu iPad y en tu propio
+      espacio privado de iCloud.</strong>
+    </p>
+
+    <div class="trail">
+
+      <section class="entry" id="es-what-the-app-stores">
+        <h2>Qué guarda la app</h2>
+        <p>
+          Pagela guarda en tu dispositivo: los libros que añades, tus notas
+          adhesivas, tus citas (una imagen de cada pasaje que marcas junto con su
+          texto), tus trazos con el Apple Pencil, tus posiciones de lectura y tus
+          estadísticas de lectura. No existe ningún servidor de Codifya al que
+          vaya a parar nada de esto, y nunca necesitas una cuenta para usar la
+          app.
+        </p>
+        <div class="callout">
+          <strong>No se recopilan datos.</strong> Esa es la etiqueta de
+          privacidad de Pagela en el App Store. No recopilamos tu nombre, tu
+          correo electrónico, tus contactos, tu ubicación ni nada de lo que lees
+          o escribes en la app.
+        </div>
+      </section>
+
+      <section class="entry" id="es-icloud">
+        <h2>Sincronización con iCloud</h2>
+        <p>
+          La sincronización con iCloud es opcional: solo funciona si has
+          iniciado sesión en iCloud en tu iPad. En ese caso, Pagela sincroniza
+          tus notas, citas, trazos, posiciones de lectura y estadísticas a
+          través de tu propia base de datos <strong>privada</strong> de iCloud
+          (Apple CloudKit), para que aparezcan en tus otros iPad. Esa base de
+          datos pertenece a tu cuenta de Apple: Codifya no puede verla ni
+          acceder a ella. Apple la guarda según su propia
+          <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">política de privacidad</a>.
+        </p>
+        <p>
+          Los archivos de los libros <strong>no</strong> se sincronizan. Para
+          leer un libro en otro iPad, añade allí también el mismo archivo. Si no
+          has iniciado sesión en iCloud, todo se queda en el dispositivo.
+        </p>
+      </section>
+
+      <section class="entry" id="es-books">
+        <h2>Tus libros</h2>
+        <p>
+          Pagela abre los archivos EPUB y PDF sin DRM que decides añadir. No
+          puede abrir libros protegidos con DRM. Tus libros se guardan en tu
+          dispositivo y nunca se suben a Codifya.
+        </p>
+        <p>
+          El contenido de los libros tiene bloqueada la carga de cualquier
+          recurso de internet, así que un libro no puede conectarse a ningún
+          servidor remoto mientras lo lees.
+        </p>
+      </section>
+
+      <section class="entry" id="es-statistics">
+        <h2>Estadísticas de lectura</h2>
+        <p>
+          Las estadísticas de lectura se calculan en tu iPad y solo cuentan el
+          tiempo de lectura activa. Nunca se envían a Codifya. Puedes desactivar
+          el <strong>Seguimiento de lectura</strong> o eliminar todas las
+          estadísticas cuando quieras desde los Ajustes de Pagela.
+        </p>
+      </section>
+
+      <section class="entry" id="es-no-tracking">
+        <h2>Sin anuncios, analíticas ni rastreo</h2>
+        <p>
+          Pagela no incluye publicidad, analíticas ni SDK de terceros. No te
+          rastrea a través de apps o sitios web de otras empresas.
+        </p>
+      </section>
+
+      <section class="entry" id="es-children">
+        <h2>Privacidad de los menores</h2>
+        <p>
+          Pagela no está dirigida a niños. No recopila datos personales de
+          nadie, tenga la edad que tenga.
+        </p>
+      </section>
+
+      <section class="entry" id="es-your-data">
+        <h2>Gestionar y eliminar tus datos</h2>
+        <ul>
+          <li><strong>Notas, citas y estadísticas:</strong> elimina notas y citas
+            una a una desde la app, y borra todas las estadísticas de lectura en
+            los Ajustes de Pagela.</li>
+          <li><strong>Todo lo que hay en este iPad:</strong> al eliminar la app se
+            borran todos sus datos guardados localmente.</li>
+          <li><strong>iCloud:</strong> para eliminar los datos sincronizados de
+            Pagela, ve a <code>Ajustes → [tu nombre] → iCloud → Gestionar
+            almacenamiento</code> en tu dispositivo.</li>
+        </ul>
+        <p>
+          Como Codifya no guarda ninguna copia de tus datos, no tenemos nada
+          que consultar, exportar o eliminar en tu nombre: las opciones
+          anteriores son todo lo que hay.
+        </p>
+      </section>
+
+      <section class="entry" id="es-changes">
+        <h2>Cambios en esta política</h2>
+        <p>
+          Si cambia la forma en que Pagela trata los datos, publicaremos la
+          actualización en esta página y cambiaremos la fecha que aparece
+          arriba.
+        </p>
+      </section>
+
+      <section class="entry" id="es-contact">
+        <h2>Contacto</h2>
+        <p>
+          ¿Tienes preguntas sobre esta política? Escríbenos a <a href="mailto:info@codifya.com">info@codifya.com</a>.
+          Consulta también nuestros <a href="/pagela/terms/">Términos de uso</a>
+          y la página de <a href="/pagela/support/">Asistencia</a>.
+        </p>
+      </section>
+
+    </div>
+
+  </section>
+
+  <footer class="reveal" style="animation-delay: 0.60s">
+    <span>© 2026 Codifya. Pagela.</span>
+    <a class="back-to-top" href="#top">Back to top ↑</a>
+  </footer>
+
+</div>
+
+</body>
+</html>
